@@ -25,7 +25,8 @@ import {
 const ariaLabel = { "aria-label": "description" };
 
 const Signup = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [otpOpen, setOtpOpen] = useState(false);
+  const [verifyOpen, setVerifyOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
@@ -35,7 +36,12 @@ const Signup = () => {
   const handleMouseDownConfirmPassword = () =>
     setShowPasswordConfirm(!showPasswordConfirm);
   const handleDialogOpen = () => {
-    setIsOpen(true);
+    setOtpOpen(true);
+  };
+
+  const handleOTP = () => {
+    setOtpOpen(false);
+    setVerifyOpen(true);
   };
   return (
     <SignupLayout>
@@ -189,12 +195,10 @@ const Signup = () => {
           </Typography>
         </div>
         <ReusableDialog
-          isOpen={isOpen}
+          isOpen={otpOpen}
           title="Enter Mobile Number"
           subtitle="For verification please enter your number"
-          handleClose={() => {
-            setIsOpen(false);
-          }}
+          handleClose={handleOTP}
           btnLabel="Send OTP"
         >
           <div
@@ -207,6 +211,15 @@ const Signup = () => {
             />
           </div>
         </ReusableDialog>
+        <ReusableDialog
+          isOpen={verifyOpen}
+          title="Verify"
+          subtitle="ehbnkm"
+          handleClose={() => {
+            setVerifyOpen(false);
+          }}
+          btnLabel="Send OTP"
+        />
       </div>
     </SignupLayout>
   );
