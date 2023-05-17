@@ -6,7 +6,7 @@ import { adminRoleGetterService } from "./shared/services";
 import SidebarLayout from "./features/side-bar/SidebarLayout";
 
 import "./App.css";
-
+//
 function App() {
   const admin_role = adminRoleGetterService();
   const permitAdmin = admin_role === "Super" ? true : false;
