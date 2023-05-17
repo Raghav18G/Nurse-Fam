@@ -9,6 +9,8 @@ import PublicRoute from "./features/routes/PublicRoute";
 import SidebarLayout from "./features/side-bar/SidebarLayout";
 
 import "./App.css";
+import Signup from "./features/auth/Signup";
+
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -26,7 +28,7 @@ function App() {
         /> */}
       </Route>
 
-      <Route exact path="/" element={<Login />} />
+      <Route exact path="/" element={<Signup />} />
     </Routes>
   );
 }

@@ -60,7 +60,7 @@ const Sidebar = () => {
             <Fragment key={idx}>
               <div
                 style={{
-                  backgroundColor: active === idx ? "#f39b60" : "",
+                  backgroundColor: active === idx ? "#A52B92" : "",
                   display:
                     item.accessibleToAll === false &&
                     user_role !== "Super" &&
