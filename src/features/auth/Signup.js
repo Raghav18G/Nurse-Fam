@@ -1,28 +1,31 @@
 import React, { useState } from "react";
-import SignupLayout from "./SignupLayout";
-import "./style.css";
-import logo from "../../image/signup/logo.png";
-import leftSectionImage from "../../image/signup/leftSection.png";
-import Google from "../../image/signup/Google.png";
 import Facebook from "../../image/signup/Facebook.png";
+import Google from "../../image/signup/Google.png";
 import Linkedin from "../../image/signup/LinkedIn.png";
 import OTP from "../../image/signup/OTP.png";
+import logo from "../../image/signup/logo.png";
+import ReusableDialog from "../../shared/Dialog/ResusableDialog";
+import SignupLayout from "./SignupLayout";
+import "./style.css";
 
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import {
   Button,
   Checkbox,
   FormControlLabel,
   FormGroup,
   IconButton,
+  Input,
   InputAdornment,
-  Paper,
   TextField,
   Typography,
 } from "@mui/material";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
+const ariaLabel = { "aria-label": "description" };
 
 const Signup = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
@@ -31,7 +34,9 @@ const Signup = () => {
     setShowPasswordConfirm(!showPasswordConfirm);
   const handleMouseDownConfirmPassword = () =>
     setShowPasswordConfirm(!showPasswordConfirm);
-
+  const handleDialogOpen = () => {
+    setIsOpen(true);
+  };
   return (
     <SignupLayout>
       <div className="signupContainer">
@@ -165,6 +170,7 @@ const Signup = () => {
             <Button
               elevation={3}
               variant="contained"
+              onClick={handleDialogOpen}
               sx={{
                 marginRight: "2rem",
                 cursor: "pointer",
@@ -182,6 +188,25 @@ const Signup = () => {
             Been here before? <span style={{ color: "#A52B92" }}>Login</span>
           </Typography>
         </div>
+        <ReusableDialog
+          isOpen={isOpen}
+          title="Enter Mobile Number"
+          subtitle="For verification please enter your number"
+          handleClose={() => {
+            setIsOpen(false);
+          }}
+          btnLabel="Send OTP"
+        >
+          <div
+            style={{ display: "flex", alignItems: "center", margin: "20px" }}
+          >
+            <Input
+              placeholder="Enter 10-digit Number"
+              inputProps={ariaLabel}
+              fullWidth
+            />
+          </div>
+        </ReusableDialog>
       </div>
     </SignupLayout>
   );
