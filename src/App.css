@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
+}
+
+:root {
+  --primary-color: #f77433;
+  --secondary-color: #fff;
+  --accent-color: #852508;
+  --navbar-color: #00352c;
+}
+
+.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #918f8f;
+  border-radius: 48px;
+}
+.mostly-customized-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+.mostly-customized-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+.mostly-customized-scrollbar {
+  overflow: auto;
+}
+
+.a {
+  display: flex;
+}
+
+.MuiDataGrid-columnHeaders {
+  background-color: #f39b60;
+  color: #fff;
+}

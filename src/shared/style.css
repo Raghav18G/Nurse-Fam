@@ -1,0 +1,21 @@
+.text-editor{
+    margin-bottom: "50px" !important;
+}
+
+.ql-editor{
+    height: "5rem" !important;   
+}
+.ql-container{
+    height: 100px !important;
+    border-radius: 0rem 0rem 1.5rem 1.5rem !important;    
+}
+
+.ql-container.ql-snow{
+    border: 1px solid #F77433 !important;
+}
+
+.ql-toolbar.ql-snow{
+    border: 0px !important;
+    background-color: #F77433 !important;
+    border-radius: 1.5rem 1.5rem 0rem 0rem !important;
+}

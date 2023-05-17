@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.sidenav-container ul a.active svg path {
+  fill:#000 !important;
+  color: #000 !important;
+  /* font-family: mulish !important; */
+  font-family: Poppins !important;
+}
+
+.sidenav-container .MuiIcon-root {
+  color: #344767;
+}
+
+.sidenav-container .MuiCollapse-root a.active .MuiListItem-root {
+  background-color: #01897F !important;
+  color: #000 !important;
+  font-family: Poppins !important;}
+
+
+.collapseParent .MuiBox-root:active {
+  background-color: #01897F !important;
+  color: #000 !important;
+}
+
+.collapseParent .MuiBox-root:active .MuiListItemIcon-root path,
+.collapseParent .MuiBox-root:active .MuiIcon-root {
+  background-color: rgba(209, 238, 236, 0.5) !important;
+  color: #000 !important;
+  left: 5px !important;
+}
+
+.sidenav-container{
+  position: absolute !important;
+  top:0;
+  left:0;
+}
+
+.sidenav-container .MuiPaper-root {
+  margin : 0;
+}
+
+.sidenav-container .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner ul a li .MuiListItemText-root span{
+    font-size: 14px !important;
+}
+
+.sidenav-container .MuiListItemText-root span{
+  font-family: Poppins !important;  
+  font-weight: 500px !important;
+  font-size: 15px !important;
+}
+.css-1b4uv5i span{
+  font-family: Poppins !important;}
