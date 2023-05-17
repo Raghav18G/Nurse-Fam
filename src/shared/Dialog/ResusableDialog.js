@@ -18,9 +18,9 @@ const ReusableDialog = ({
   isOpen,
   handleClose,
   btnLabel,
+  footerText = false,
+  footerTextContent,
 }) => {
-
-  
   return (
     <>
       <Dialog
@@ -55,6 +55,8 @@ const ReusableDialog = ({
                   fontSize: "15px",
                   fontWeight: "bold",
                   // padding: "10px",
+
+                  lineHeight: "14px",
                 }}
               >
                 {subtitle}
@@ -76,6 +78,8 @@ const ReusableDialog = ({
                 {btnLabel}
               </Button>
             </DialogActions>
+
+            <div>{footerText && footerTextContent}</div>
           </DialogContent>
         </div>
       </Dialog>
