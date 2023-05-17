@@ -6,6 +6,7 @@ import leftSectionImage from "../../image/signup/leftSection.png";
 import Google from "../../image/signup/Google.png";
 import Facebook from "../../image/signup/Facebook.png";
 import Linkedin from "../../image/signup/LinkedIn.png";
+import OTP from "../../image/signup/OTP.png";
 
 import {
   Button,
@@ -128,15 +129,50 @@ const Signup = () => {
             <div style={{ flex: 1, height: "1px", backgroundColor: "black" }} />
           </div>
           <div className="socialsContainer">
-            <Paper elevation={3} sx={{ marginRight: "2rem" }}>
+            <Button
+              elevation={3}
+              variant="contained"
+              sx={{
+                marginRight: "2rem",
+                cursor: "pointer",
+                backgroundColor: "#fff !important",
+              }}
+            >
               <img src={Google} style={{ width: "50px" }} />
-            </Paper>
-            <Paper elevation={3} sx={{ marginRight: "2rem" }}>
-              <img src={Facebook} style={{ width: "40px", padding: "5px" }} />
-            </Paper>
-            <Paper elevation={3} sx={{ marginRight: "2rem" }}>
-              <img src={Linkedin} style={{ width: "40px", padding: "5px" }} />
-            </Paper>
+            </Button>
+            <Button
+              elevation={3}
+              variant="contained"
+              sx={{
+                marginRight: "2rem",
+                cursor: "pointer",
+                backgroundColor: "#fff !important",
+              }}
+            >
+              <img src={Facebook} style={{ width: "40px", padding: "px" }} />
+            </Button>
+            <Button
+              elevation={3}
+              variant="contained"
+              sx={{
+                marginRight: "2rem",
+                cursor: "pointer",
+                backgroundColor: "#fff !important",
+              }}
+            >
+              <img src={Linkedin} style={{ width: "40px", padding: "3px" }} />
+            </Button>
+            <Button
+              elevation={3}
+              variant="contained"
+              sx={{
+                marginRight: "2rem",
+                cursor: "pointer",
+                backgroundColor: "#fff !important",
+              }}
+            >
+              <img src={OTP} style={{ width: "60px", padding: "12px" }} />
+            </Button>
           </div>
 
           <Typography
