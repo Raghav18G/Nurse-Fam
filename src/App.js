@@ -11,6 +11,7 @@ import SidebarLayout from "./features/side-bar/SidebarLayout";
 import "./App.css";
 import Signup from "./features/auth/Signup";
 
+
 function App() {
   const admin_role = adminRoleGetterService();
   const permitAdmin = admin_role === "Super" ? true : false;

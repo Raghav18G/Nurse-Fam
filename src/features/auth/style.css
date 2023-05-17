@@ -1,69 +1,67 @@
+/* Sign up Layout Styles */
+
 .container {
   width: 100vw;
   height: 100vh;
+  background-color: #F0F2F9;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.container {
-  width: 100vw;
-  height: 90vh;
+.cardContainer{
+background-color: #fff;
+width: 90vw;
+height: 90vh;
+border-radius: 40px;
 }
 
-.logo-image {
-  height: 30%;
+/* Sign up Page Styles */
+.signupContainer{
+  display: flex;
+  justify-content: space-between;
+
 }
-.logo-image-div {
+
+/* .cardContent{
+height: 90vh;
+} */
+
+.signupContainer--left{
+  width:40%;
+  display: flex;
+  margin-left: 4rem;
+  margin-right: 1rem;
+  flex-direction: column;
+}
+
+.signupContainer--left--bottom{
+  background-image: url("../../image//signup/leftSection.png");
+  height:65vh;
+
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.signupContainer--right{
+  width:60%;
+  height:89vh;
+  background-color: #F0F2F9;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px; 
+  padding:2rem;
+   display: flex;
+  flex-direction: column; 
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.socialsContainer{
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
-  padding: 10px;
-  position: relative;
-  top: 40%;
-}
-.logo-image img {
-  width: 30%;
-}
-.login-container {
-  height: 70%;
-  display: flex;
   align-items: center;
-}
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  width: 60%;
-  padding: 2rem;
-  position: relative;
-  top: 10%;
-  left: 20%
-}
-/* .login-container.MuiContainer-root {
-  padding: 4rem 20%;
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.login-header.MuiTypography-root {
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
-  margin: 1rem 0;
-}
-
-@media screen and (max-width: 600px) {
-  .login-container.MuiContainer-root {
-    padding: 4rem 2rem;
-  }
-} */
-@media screen and (max-width: 600px) {
-  .login-container.MuiContainer-root {
-    padding: 4rem 2rem;
-  }
 }
