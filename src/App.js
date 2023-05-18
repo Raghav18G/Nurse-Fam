@@ -13,6 +13,7 @@ import Signup from "./features/auth/Signup";
 import UDLanding from "./features/userDetails/UDLanding";
 
 import Signin from "./features/auth/Signin";
+import Landing from "./features/landing";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -30,7 +31,8 @@ function App() {
         /> */}
       </Route>
 
-      <Route exact path="/" element={<Signup />} />
+      <Route exact path="/" element={<Landing />} />
+      <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/userDetails" element={<UDLanding />} />
       <Route exact path="/login" element={<Signin />} />
     </Routes>
