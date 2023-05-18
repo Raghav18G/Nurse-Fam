@@ -1,0 +1,17 @@
+.platformCard{
+    height:60vh;
+    width: 50vh;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    cursor: pointer;
+}
+
+.platformCard--Content{
+   position: absolute;
+   top:70%;
+   width: 100%;
+   text-align: center;
+}
