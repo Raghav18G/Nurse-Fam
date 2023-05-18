@@ -21,14 +21,16 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import OTPInput from "react-otp-input";
 
 const ariaLabel = { "aria-label": "description" };
 
 const Signup = () => {
-  const [otpOpen, setOtpOpen] = useState(false);
-  const [verifyOpen, setVerifyOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [otp, setOtp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
+  const [verifyOpen, setVerifyOpen] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const handleClickConfirmShowPassword = () =>
@@ -41,6 +43,10 @@ const Signup = () => {
 
   const handleOTP = () => {
     setOtpOpen(false);
+    setVerifyOpen(true);
+  };
+  const handleVerifyOpen = () => {
+    setIsOpen(false);
     setVerifyOpen(true);
   };
   return (
@@ -198,7 +204,7 @@ const Signup = () => {
           isOpen={otpOpen}
           title="Enter Mobile Number"
           subtitle="For verification please enter your number"
-          handleClose={handleOTP}
+          handleClose={handleVerifyOpen}
           btnLabel="Send OTP"
         >
           <div
@@ -211,15 +217,46 @@ const Signup = () => {
             />
           </div>
         </ReusableDialog>
+         
         <ReusableDialog
           isOpen={verifyOpen}
-          title="Verify"
-          subtitle="ehbnkm"
+          title="Verification"
+          subtitle="We have sent code to your on your number +91 98*******1"
           handleClose={() => {
             setVerifyOpen(false);
           }}
-          btnLabel="Send OTP"
-        />
+          btnLabel="Verify"
+          footerText={true}
+          footerTextContent={
+            <>
+              <Typography variant="subtitle1" style={{ textAlign: "center" }}>
+                Didn't receive code?{" "}
+                <span style={{ color: "#A52B92" }}>Resend</span>{" "}
+              </Typography>
+            </>
+          }
+        >
+          <OTPInput
+            value={otp}
+            onChange={setOtp}
+            numInputs={4}
+            renderInput={(props) => <input {...props} />}
+            inputType="tel"
+            containerStyle={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            inputStyle={{
+              width: "4rem",
+              height: "4rem",
+              margin: "1rem",
+              borderRadius: "5px",
+              fontSize: "2rem",
+              fontWeight: "800",
+            }}
+          />
+        </ReusableDialog>
       </div>
     </SignupLayout>
   );
