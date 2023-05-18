@@ -1,3 +1,32 @@
+/* Home Section Container */
+
+.HomeSection--Container{
+    background-color: #FFF;
+    height: 100vh;
+    width: 99vw;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+
+.HomeSection--Navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.HomeSection--Navbar .MuiButton-contained {
+    background-color:#341950 !important;
+    font-weight:800 !important;
+    border-radius: 20px !important;
+   }
+
+.HomeSection--Navbar--text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 /* PLATFORM SECTION STYLES */
 
 .platformSection--container{
@@ -67,3 +96,22 @@
     border: 2px solid #A52B92 !important;
     font-weight:800 !important;
 }
+
+
+/* About Section Container */
+
+.AboutUsSection--Container{
+    background-color: #FFF;
+    height: 100vh;
+    width: 99vw;
+    background-image:url("../../image/aboutus.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
