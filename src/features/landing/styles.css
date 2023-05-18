@@ -2,7 +2,7 @@
 
 .HomeSection--Container{
     background-color: #FFF;
-    height: 100vh;
+    height: 110vh;
     width: 99vw;
     padding: 2rem;
     padding-top: 0;
@@ -26,6 +26,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.HomeSection--MainContent{
+    height: 70vh;
+    background-image:url("../../image//homebg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.HomeSection--Paper{
+    position: absolute;
+    top:86%;
+}
+
+.HomeSection--Paper--Content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 /* PLATFORM SECTION STYLES */
 
