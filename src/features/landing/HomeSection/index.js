@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ResponsiveAppBar from "../../../shared/Navbar";
 
 const HomeSection = () => {
   return (
-    <div>HomeSection</div>
-  )
-}
+    <div>
+      <ResponsiveAppBar />
+    </div>
+  );
+};
 
-export default HomeSection
+export default HomeSection;
