@@ -3,7 +3,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { adminRoleGetterService } from "./shared/services";
 
-import Login from "./features/auth";
 import PrivateRoute from "./features/routes/PrivateRoute";
 import PublicRoute from "./features/routes/PublicRoute";
 import SidebarLayout from "./features/side-bar/SidebarLayout";
