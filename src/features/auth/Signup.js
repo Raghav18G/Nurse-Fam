@@ -38,12 +38,7 @@ const Signup = () => {
   const handleMouseDownConfirmPassword = () =>
     setShowPasswordConfirm(!showPasswordConfirm);
   const handleDialogOpen = () => {
-    setOtpOpen(true);
-  };
-
-  const handleOTP = () => {
-    setOtpOpen(false);
-    setVerifyOpen(true);
+    setIsOpen(true);
   };
   const handleVerifyOpen = () => {
     setIsOpen(false);
@@ -201,7 +196,7 @@ const Signup = () => {
           </Typography>
         </div>
         <ReusableDialog
-          isOpen={otpOpen}
+          isOpen={isOpen}
           title="Enter Mobile Number"
           subtitle="For verification please enter your number"
           handleClose={handleVerifyOpen}
