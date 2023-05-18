@@ -10,6 +10,8 @@ import SidebarLayout from "./features/side-bar/SidebarLayout";
 
 import "./App.css";
 import Signup from "./features/auth/Signup";
+import UDLanding from "./features/userDetails/UDLanding";
+
 import Signin from "./features/auth/Signin";
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
       </Route>
 
       <Route exact path="/" element={<Signup />} />
+      <Route exact path="/userDetails" element={<UDLanding />} />
       <Route exact path="/login" element={<Signin />} />
     </Routes>
   );
