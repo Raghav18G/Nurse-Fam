@@ -1,0 +1,62 @@
+.gridContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.titleText .MuiTypography-root {
+  color: #a52b92;
+  font-weight: 700 !important;
+}
+.subTitle {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600 !important;
+}
+.contentContainer {
+  display: flex;
+  width: 50vw;
+}
+.imageContainer {
+  margin: 20px;
+  height: 30vh;
+  width: 50%;
+  background-image: url("../../image/UDImage1.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.buttonContainer {
+  margin: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.buttonContainer button{
+    padding: 10px;
+    border-radius: 10px;
+    text-transform: none;
+   border: 2px solid !important;
+    font-weight: 800 !important;
+}
+.footerContainer {
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.userInfo {
+  text-align: left;
+}
+.completeProfile button {
+  background-color: #341950 !important;
+  border-radius: 10px;
+  text-transform: none;
+  padding: 10px;
+
+}
