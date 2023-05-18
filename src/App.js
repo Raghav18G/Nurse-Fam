@@ -10,7 +10,7 @@ import SidebarLayout from "./features/side-bar/SidebarLayout";
 
 import "./App.css";
 import Signup from "./features/auth/Signup";
-
+import Signin from "./features/auth/Signin";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -29,6 +29,7 @@ function App() {
       </Route>
 
       <Route exact path="/" element={<Signup />} />
+      <Route exact path="/login" element={<Signin />} />
     </Routes>
   );
 }

@@ -22,6 +22,7 @@ import {
   Typography,
 } from "@mui/material";
 import OTPInput from "react-otp-input";
+import { useNavigate } from "react-router-dom";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -43,6 +44,12 @@ const Signup = () => {
   const handleVerifyOpen = () => {
     setIsOpen(false);
     setVerifyOpen(true);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    navigate("/login");
   };
   return (
     <SignupLayout>
@@ -127,9 +134,7 @@ const Signup = () => {
             <div
               style={{
                 flex: 1,
-
                 height: "1px",
-
                 backgroundColor: "black",
               }}
             />
@@ -192,7 +197,18 @@ const Signup = () => {
             variant="body1"
             sx={{ marginTop: "1rem", textAlign: "center" }}
           >
-            Been here before? <span style={{ color: "#A52B92" }}>Login</span>
+            Been here before?{" "}
+            <span
+              onClick={handleSignInClick}
+              style={{
+                color: "#A52B92",
+                cursor: "pointer",
+                textUnderlinePosition: "under",
+                textDecoration: "underline",
+              }}
+            >
+              Login
+            </span>
           </Typography>
         </div>
         <ReusableDialog
