@@ -1,0 +1,29 @@
+.UDLayout--Contaner{
+
+}
+
+       
+.UDNavRight--Container{
+    display: flex;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.UDLayout--Top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+.UDLayout--Bottom{
+    display: flex;
+
+}
+
+.UDLayout--Bottom-left{
+width:80%;
+}
+
+.UDLayout--Bottom-right{
+    width:20%;
+
+}
