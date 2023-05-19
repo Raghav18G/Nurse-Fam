@@ -20,14 +20,30 @@ function App() {
   return (
     <Routes>
       <Route element={<SidebarLayout />}>
-        {/* <Route
+        <Route
           path="/group-tour-enquiry"
-          element={
-            <PrivateRoute permitAdmin={true}>
-              <GroupTourEnquiryView />
-            </PrivateRoute>
-          }
-        /> */}
+          // element={
+          //   <PrivateRoute permitAdmin={true}>
+          //     <GroupTourEnquiryView />
+          //   </PrivateRoute>
+          // }
+        />
+        <Route
+          path="/group-tour"
+          // element={
+          //   <PrivateRoute permitAdmin={true}>
+          //     <GroupTourEnquiryView />
+          //   </PrivateRoute>
+          // }
+        />
+        <Route
+          path="/group"
+          // element={
+          //   <PrivateRoute permitAdmin={true}>
+          //     <GroupTourEnquiryView />
+          //   </PrivateRoute>
+          // }
+        />
       </Route>
 
       <Route exact path="/" element={<Landing />} />

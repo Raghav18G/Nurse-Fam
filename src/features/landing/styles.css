@@ -2,116 +2,193 @@
 
 .HomeSection--Container{
     background-color: #FFF;
-    height: 100vh;
+    height: 110vh;
     width: 99vw;
     padding: 2rem;
     padding-top: 0;
 }
 
-
-.HomeSection--Navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+.HomeSection--Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .HomeSection--Navbar .MuiButton-contained {
-    background-color:#341950 !important;
-    font-weight:800 !important;
-    border-radius: 20px !important;
-   }
+  background-color: #341950 !important;
+  font-weight: 800 !important;
+  border-radius: 20px !important;
+}
 
-.HomeSection--Navbar--text{
+.HomeSection--Navbar--text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HomeSection--MainContent{
+    height: 70vh;
+    background-image:url("../../image//homebg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.HomeSection--Paper{
+    position: absolute;
+    top:86%;
+}
+
+.HomeSection--Paper--Content{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
+
+.HomeSection--Paper--Content .MuiButton-contained {
+    background-color:#341950 !important;
+   
+   }
+
+
+
 /* PLATFORM SECTION STYLES */
 
-.platformSection--container{
-    background-color: #F9FAFE;
-    height: 100vh;
-    width: 99vw;
-    padding: 2rem;
+.platformSection--container {
+  background-color: #f9fafe;
+  height: 100vh;
+  width: 99vw;
+  padding: 2rem;
 }
 
-.platformSection--top{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.platformSection--top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.platformSection--bottom{
-    margin-top: 5rem;
-    margin-left: 2rem;
-    margin-right:2rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.platformSection--bottom {
+  margin-top: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-
 
 /* Join Section Container */
 
-.JoinSection--Container{
-    background-color: #FFF;
-    height: 60vh;
-    width: 99vw;
-    padding: 2rem;
+.JoinSection--Container {
+  background-color: #fff;
+  height: 60vh;
+  width: 99vw;
+  padding: 2rem;
 }
 
-.JoinSection--top{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.JoinSection--top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.JoinSection--bottom{
-    margin-top: 5rem;
-    margin-left: 2rem;
-    margin-right:2rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.JoinSection--bottom {
+  margin-top: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.JobSection--ButtonContainer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+.JobSection--ButtonContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .JobSection--ButtonContainer .MuiButton-contained {
- background-color:#341950 !important;
- font-weight:800 !important;
+  background-color: #341950 !important;
+  font-weight: 800 !important;
 }
 
-.JobSection--ButtonContainer .MuiButton-outlined{
-    color:#000000 !important;
-    border: 2px solid #A52B92 !important;
-    font-weight:800 !important;
+.JobSection--ButtonContainer .MuiButton-outlined {
+  color: #000000 !important;
+  border: 2px solid #a52b92 !important;
+  font-weight: 800 !important;
 }
-
 
 /* About Section Container */
 
-.AboutUsSection--Container{
-    background-color: #FFF;
-    height: 100vh;
-    width: 99vw;
-    background-image:url("../../image/aboutus.png");
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: contain;
+.AboutUsSection--Container {
+  background-color: #fff;
+  height: 100vh;
+  width: 99vw;
+  background-image: url("../../image/aboutus.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
+/* footer section */
 
+.landingFooterContainer {
+  height: 60vh;
+  width: 99vw;
+  background-image: url("../../image/FooterBGImage.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 0 !important;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+}
 
+.landingFooterLogo {
+  display: flex;
+  padding: 10px;
+}
 
+.divider {
+  background-color: #fff;
+  color: #000;
+  height: 2px;
+  width: 99vw;
+}
+.leftFooter {
+  display: flex;
+  flex-direction: row;
+}
+/* HIRING SECTION CONTAINER */
 
+.HiringSection--Container{
+    height:90vh;
+    width: 99vw;
+    background-color: #F9FAFE;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
+.HiringSection--Left {
+display: flex;
+flex-direction: column;
+/* align-items: center; */
+margin-left: 8rem;
+
+}
+
+.HiringSection--Left .MuiButton-contained {
+    background-color:#341950 !important;
+    font-weight:800 !important;
+    border-radius: 10px !important;
+    width:9rem !important ;
+    margin-top: 3rem !important
+   }
