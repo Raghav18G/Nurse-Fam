@@ -16,6 +16,7 @@
 }
 .UDLayout--Bottom{
     display: flex;
+    margin-top: 5rem;
 
 }
 
@@ -27,3 +28,17 @@ width:80%;
     width:20%;
 
 }
+
+.UDLayout--Bottom-right .MuiButton-contained {
+    background-color: #341950 !important;
+    
+  }
+
+  .UDLayout--Bottom-right .MuiButton-outlined {
+    background-color: #fff !important;
+    border:1px solid #666F80 !important;
+    color:#666F80 !important
+    
+  }
+  
+  
