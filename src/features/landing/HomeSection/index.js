@@ -23,7 +23,7 @@ const HomeSection = () => {
   return (
     <div className="HomeSection--Container">
       <div className="HomeSection--Navbar">
-        <img src={logo} style={{ width: "200px" }} />
+        <img src={logo} alt="" style={{ width: "200px" }} />
         <div className="HomeSection--Navbar--text">
           <Typography
             sx={{

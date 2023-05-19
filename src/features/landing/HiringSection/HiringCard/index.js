@@ -6,7 +6,7 @@ const HiringCard = ({ image, text, subtext }) => {
   return (
     <div className="HiringCard--Container">
       <div className="HiringCard--Left">
-        <img src={image} style={{ width: "120px", margin: "2rem" }} />
+        <img src={image} alt="" style={{ width: "120px", margin: "2rem" }} />
       </div>
       <div className="HiringCard--Right">
         <Typography
