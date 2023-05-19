@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 import options from "./options";
 import "./style.css";
-import logo from "../../image/logo.png";
+import logo from "../../image/Sidebar/SidebarLogo.png";
 import admin from "../../image/admin.png";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import {
@@ -90,12 +90,7 @@ const Sidebar = () => {
   const menu = (
     <Container className="sidebar mostly-customized-scrollbar">
       <div className="logo">
-        <img src={logo} style={{ width: "6rem" }} />
-      </div>
-
-      <div className="admin-logo">
-        <img src={admin} style={{ width: "2rem" }} />
-        <div className="admin-name">Hi {user_name}</div>
+        <img src={logo} style={{ width: "10rem" }} />
       </div>
 
       <TreeView

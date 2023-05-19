@@ -7,13 +7,13 @@
 }
 
 .sidebar.MuiContainer-root {
-  background-color: var(--secondary-color);
+ 
   color: #000;
   height: 100vh;
   padding: 0;
   position: sticky;
   top: 0;
-  background-color: bisque;
+  background-color: #B06293;
 }
 
 .logo {
@@ -22,6 +22,7 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 5px;
+
 }
 
 .admin-logo {
@@ -52,6 +53,9 @@
   background-color: #fff;
 }
 
+.sidebar-treeview .MuiTreeItem-label{
+margin-top: 1rem !important;
+}
 .sidebar-treeview.MuiTreeView-root {
   position: relative;
   top: 2rem;
@@ -61,7 +65,7 @@
 }
 
 .sidebar-treeview .MuiTreeItem-content.Mui-expanded.Mui-selected {
-  background-color: #f77533;
+  background-color: #341950;
   color: #ffffff;
 }
 
@@ -75,12 +79,12 @@
 } */
 
 .sidebar-treeview .MuiTreeItem-content:hover {
-  background-color: #f39b60;
+  background-color: #341950;
   color: #ffffff;
 }
 
 .sidebar-treeview .MuiTreeItem-content.Mui-selected {
-  background-color: #f39b60;
+  background-color: #341950;
   color: #ffffff;
 }
 
@@ -90,7 +94,7 @@
 
 .sidebar-treeview .MuiTreeItem-content {
   padding: 6px 1rem !important;
-  color: #434343;
+  color: #fff;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -106,8 +110,8 @@
 
 .logout-button.MuiButton-root {
   /* position: fixed; */
-  color: #434343;
-  background-color: var(--secondary-color);
+  color: #fff;
+  /* background-color: var(--secondary-color); */
   /* width: 14rem; */
   /* text-align: center; */
   /* top: 38rem; */
