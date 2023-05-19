@@ -14,6 +14,7 @@ import UDLanding from "./features/userDetails/UDLanding";
 
 import Signin from "./features/auth/Signin";
 import Landing from "./features/landing";
+import UDProfilePricing from "./features/userDetails/Profile Pricing/UDProfilePricing";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -51,6 +52,9 @@ function App() {
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/userDetails" element={<UDLanding />} />
       <Route exact path="/login" element={<Signin />} />
+      <Route exact path="/plans" element={<UDProfilePricing />} />
+      
+
     </Routes>
   );
 }
