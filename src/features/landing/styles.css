@@ -52,6 +52,14 @@
     align-items: center;
     padding: 1rem;
 }
+
+.HomeSection--Paper--Content .MuiButton-contained {
+    background-color:#341950 !important;
+   
+   }
+
+
+
 /* PLATFORM SECTION STYLES */
 
 .platformSection--container{
@@ -137,6 +145,29 @@
 
 
 
+/* HIRING SECTION CONTAINER */
 
+.HiringSection--Container{
+    height:90vh;
+    width: 99vw;
+    background-color: #F9FAFE;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
+.HiringSection--Left {
+display: flex;
+flex-direction: column;
+/* align-items: center; */
+margin-left: 8rem;
 
+}
+
+.HiringSection--Left .MuiButton-contained {
+    background-color:#341950 !important;
+    font-weight:800 !important;
+    border-radius: 10px !important;
+    width:9rem !important ;
+    margin-top: 3rem !important
+   }

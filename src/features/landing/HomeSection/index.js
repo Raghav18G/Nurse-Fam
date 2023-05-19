@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import "../styles.css";
 import logo from "../../../image/signup/logo.png";
+import SearchIcon from "@mui/icons-material/Search";
 import {
   Autocomplete,
   Button,
+  FormControl,
+  InputLabel,
+  NativeSelect,
   Paper,
   TextField,
   Typography,
@@ -130,7 +134,7 @@ const HomeSection = () => {
             <div className="HomeSection--Paper--Content">
               <Autocomplete
                 value={value}
-                style={{ fontWeight: "800", color: "#666F80" }}
+                style={{ fontWeight: "800", color: "#666F80", width: "100%" }}
                 onChange={(event, newValue) => {
                   if (typeof newValue === "string") {
                     setValue({
@@ -193,6 +197,38 @@ const HomeSection = () => {
                   />
                 )}
               />
+              <hr
+                style={{
+                  height: "30px",
+                  color: "#98A0A6",
+                  margin: "0rem 2rem 0rem 2rem",
+                }}
+              />
+              <FormControl fullWidth>
+                <InputLabel
+                  variant="standard"
+                  htmlFor="uncontrolled-native"
+                  sx={{ fontWeight: "700", color: "#666F80" }}
+                >
+                  Location
+                </InputLabel>
+                <NativeSelect
+                  sx={{ width: "70%" }}
+                  defaultValue={30}
+                  inputProps={{
+                    name: "Location",
+                    id: "uncontrolled-native",
+                  }}
+                >
+                  {/* <option value={10}>Ten</option>
+                  <option value={20}>Twenty</option>
+                  <option value={30}>Thirty</option> */}
+                </NativeSelect>
+              </FormControl>
+
+              <Button variant="contained" sx={{ backgroundColor: "#341950" }}>
+                <SearchIcon />
+              </Button>
             </div>
           </Paper>
         </div>
