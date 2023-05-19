@@ -14,7 +14,7 @@ const PlatformCard = ({ image, text, handleClick }) => {
           elevation={3}
           sx={{
             height: "19vh",
-            borderRadius: "4px",
+            borderRadius: "20px",
             padding: "1.5rem",
             fontFamily: "Montserrat",
             fontWeight: "600",

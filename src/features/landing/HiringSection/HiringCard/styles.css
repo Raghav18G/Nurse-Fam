@@ -1,0 +1,23 @@
+.HiringCard--Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 30vh;
+  width: 26vw;
+  margin: 2rem;
+  border-radius: 10px;
+  border: 1px solid #341950;
+  /* box-shadow: 2px 2px 2px #000000; */
+}
+.HiringCard--Left {
+  width: 50%;
+}
+
+.HiringCard--Right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
