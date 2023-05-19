@@ -147,10 +147,13 @@
   background-repeat: no-repeat;
   margin-bottom: 0 !important;
   color: #fff;
+  display: flex;
+  flex-direction: row;
 }
 
 .landingFooterLogo {
   display: flex;
+  padding: 10px;
 }
 
 .divider {
@@ -158,6 +161,10 @@
   color: #000;
   height: 2px;
   width: 99vw;
+}
+.leftFooter {
+  display: flex;
+  flex-direction: row;
 }
 /* HIRING SECTION CONTAINER */
 
