@@ -15,6 +15,7 @@ import Signin from "./features/auth/Signin";
 import Landing from "./features/landing";
 import UDGeneralInfo from "./features/userDetails/UDGeneralInfo";
 import UDLayout from "./features/userDetails/UDLayout";
+import Sample from "./shared/sample";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -53,6 +54,9 @@ function App() {
       <Route exact path="/userDetails" element={<UDLanding />} />
       <Route exact path="/userDetails/generalInfo" element={<UDLayout />} />
       <Route exact path="/login" element={<Signin />} />
+
+      {/* PORTFOLIO */}
+      <Route exact path="/components" element={<Sample />} />
     </Routes>
   );
 }

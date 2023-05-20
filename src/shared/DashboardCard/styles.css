@@ -1,0 +1,16 @@
+.DashboardCard--Container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  
+}
+.DashboardCard--Footer{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DashboardCard--Content{
+    margin-top: 0.5rem;
+}
