@@ -19,10 +19,13 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { useNavigate } from "react-router-dom";
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
+  const navigate = useNavigate();
+
   return (
     <SignupLayout>
       <div className="signinContainer">
@@ -92,6 +95,7 @@ const Signin = () => {
             <Button
               variant="contained"
               sx={{ backgroundColor: "#341950 !important", marginTop: "1rem" }}
+              onClick={() => navigate("/userDetails")}
             >
               Sign In
             </Button>

@@ -14,6 +14,7 @@ import StepConnector, {
 import UDGeneralInfo from "../UDGeneralInfo";
 import UDQualifications from "../UDQualifications";
 import UDJobPreferences from "../UDJobPreferences";
+import { useNavigate } from "react-router-dom";
 
 const UDLayout = () => {
   //Components Constants
@@ -86,6 +87,7 @@ const UDLayout = () => {
   const steps = ["General Information", "Qualifications", "Job Preferences"];
 
   const [activeStep, setActiveStep] = useState(0);
+  const navigate = useNavigate();
 
   const handleContinue = () => {
     if (activeStep < 2) {
@@ -144,7 +146,15 @@ const UDLayout = () => {
             {" "}
             Continue
           </Button>
-          <Button variant="outlined" sx={{ width: "12rem", marginTop: "1rem" }}>
+          <Button
+            variant="outlined"
+            sx={{ width: "12rem", marginTop: "1rem" }}
+            onClick={() => {
+              if (activeStep == 2) {
+                navigate("/plans");
+              }
+            }}
+          >
             {" "}
             Save
           </Button>

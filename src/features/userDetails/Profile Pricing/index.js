@@ -5,8 +5,10 @@ import SignupLayout from "../../auth/SignupLayout";
 import "./styles.css";
 import tick from "../../../image/CheckboxTick.svg";
 import cross from "../../../image/CheckboxCross.svg";
+import { useNavigate } from "react-router-dom";
 
 const UDProfilePricing = () => {
+  const navigate = useNavigate();
   return (
     <SignupLayout>
       <div className="mainContainer">
@@ -124,7 +126,13 @@ const UDProfilePricing = () => {
             </Button>
           </div>
           <div className="completeProfile--profile-completion">
-            <Button variant="contained" fullWidth>
+            <Button
+              variant="contained"
+              fullWidth
+              onClick={() => {
+                navigate("/paysuccess");
+              }}
+            >
               Start Verification
             </Button>
           </div>

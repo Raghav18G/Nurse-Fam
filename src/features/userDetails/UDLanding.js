@@ -3,7 +3,9 @@ import React from "react";
 import logo from "../../image/UDLogo.png";
 import SignupLayout from "../auth/SignupLayout";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 const UDLanding = () => {
+  const navigate = useNavigate();
   return (
     <SignupLayout>
       <div className="gridContainer">
@@ -27,9 +29,9 @@ const UDLanding = () => {
             {/* This contains the background image */}
           </div>
           <div className="buttonContainer">
-          <Button variant="outlined">Add Contact Details</Button>
-          <Button variant="outlined">Add Qualifications</Button>
-          <Button variant="outlined">Add Job Preferences</Button>
+            <Button variant="outlined">Add Contact Details</Button>
+            <Button variant="outlined">Add Qualifications</Button>
+            <Button variant="outlined">Add Job Preferences</Button>
           </div>
         </div>
         <div className="footerContainer">
@@ -39,7 +41,14 @@ const UDLanding = () => {
             j**e@gmail.com
           </div>
           <div className="completeProfile">
-            <Button variant="contained">Complete Profile</Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                navigate("/userDetails/info");
+              }}
+            >
+              Complete Profile
+            </Button>
           </div>
         </div>
       </div>
