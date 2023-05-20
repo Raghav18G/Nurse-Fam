@@ -50,12 +50,17 @@ const UDGeneralInfo = () => {
           >
             <Grid item xs={12}>
               <InputLabel>Full Name*</InputLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+              />
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
               <InputLabel>DOB*</InputLabel>
 
               <TextField
+                sx={{ backgroundColor: "#fff" }}
                 name="startDate"
                 type="date"
                 size="small"
@@ -109,11 +114,19 @@ const UDGeneralInfo = () => {
           >
             <Grid item xs={6} sx={{ paddingRight: "10px" }}>
               <InputLabel>Phone Number*</InputLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+              />
             </Grid>
             <Grid item xs={6}>
               <InputLabel>Email Address*</InputLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -130,39 +143,61 @@ const UDGeneralInfo = () => {
           >
             <Grid item xs={6} sx={{ paddingRight: "10px" }}>
               <InputLabel>House Number*</InputLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+              />
             </Grid>
             <Grid item xs={6}>
               <InputLabel>Landmark</InputLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+              />
             </Grid>
             <Grid item xs={12} sx={{ marginTop: "1rem" }}>
-              <TextField size="small" placeholder="Street 1*" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                placeholder="Street 1*"
+                fullWidth
+              />
             </Grid>
             <Grid item xs={12} sx={{ marginTop: "1rem" }}>
-              <TextField size="small" placeholder="Street 2" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                placeholder="Street 2"
+                fullWidth
+              />
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem", paddingRight: "10px" }}>
               <InputLabel>City*</InputLabel>
-              <Select size="small" fullWidth>
+              <Select sx={{ backgroundColor: "#fff" }} size="small" fullWidth>
                 <MenuItem value={1}>option 1</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
               <InputLabel>State/Province*</InputLabel>
-              <Select size="small" fullWidth>
+              <Select sx={{ backgroundColor: "#fff" }} size="small" fullWidth>
                 <MenuItem value={1}>option 1</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem", paddingRight: "10px" }}>
               <InputLabel>Country*</InputLabel>
-              <Select size="small" fullWidth>
+              <Select sx={{ backgroundColor: "#fff" }} size="small" fullWidth>
                 <MenuItem value={1}>option 1</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
               <InputLabel>ZIP Code*</InputLabel>
-              <TextField size="small" fullWidth />
+              <TextField
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -181,6 +216,7 @@ const UDGeneralInfo = () => {
             </Grid>
             <Grid item xs={6} sx={{ paddingRight: "10px" }}>
               <TextField
+                sx={{ backgroundColor: "#fff" }}
                 type="file"
                 fullWidth
                 size="small"
@@ -198,7 +234,12 @@ const UDGeneralInfo = () => {
               />
             </Grid>
             <Grid item xs={6}>
-              <Select size="small" placeholder="Choose Avatar" fullWidth>
+              <Select
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                placeholder="Choose Avatar"
+                fullWidth
+              >
                 <MenuItem value={1}>option 1</MenuItem>
               </Select>
             </Grid>
@@ -217,6 +258,7 @@ const UDGeneralInfo = () => {
             <Grid item xs={12}>
               <InputLabel>About Me</InputLabel>
               <TextField
+                sx={{ backgroundColor: "#fff" }}
                 size="small"
                 placeholder="Description"
                 fullWidth
