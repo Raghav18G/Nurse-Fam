@@ -32,7 +32,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const [expanded, setExpanded] = useState([]);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState(0);
 
   const user_name = adminNameGetterService();
   const user_role = adminRoleGetterService();
@@ -60,7 +60,7 @@ const Sidebar = () => {
             <Fragment key={idx}>
               <div
                 style={{
-                  backgroundColor: active === idx ? "#A52B92" : "",
+                  backgroundColor: active === idx ? "#111" : "#fff",
                   display:
                     item.accessibleToAll === false &&
                     user_role !== "Super" &&
@@ -99,16 +99,26 @@ const Sidebar = () => {
         defaultCollapseIcon={<ExpandLess />}
         defaultExpandIcon={<ExpandMore />}
         onNodeSelect={handleNodeSelect}
+        sx={{ paddingLeft: "4px", paddingRight: "6px" }}
       >
-        {options.map((option, idx) =>
-          user_role === "Super" ? (
-            <Fragment key={idx}>{renderFolder(option)}</Fragment>
-          ) : (
-            sidebarAccessToSubAdmin.includes(option.id) && (
-              <Fragment key={idx}>{renderFolder(option)}</Fragment>
-            )
-          )
-        )}
+        {options.map((option, idx) => (
+          <Fragment key={idx}>
+            {" "}
+            <div
+              style={{
+                backgroundColor: active === idx ? "#341950" : "",
+                marginTop: "1rem",
+                alignItems: "center",
+                borderRadius: "30px",
+              }}
+              onClick={() => {
+                setActive(idx);
+              }}
+            >
+              {renderFolder(option)}
+            </div>
+          </Fragment>
+        ))}
       </TreeView>
 
       <Button

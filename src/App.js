@@ -18,6 +18,12 @@ import UDPaymentSuccess from "./features/userDetails/Payment Success";
 import UDGeneralInfo from "./features/userDetails/UDGeneralInfo";
 import UDLayout from "./features/userDetails/UDLayout";
 import Sample from "./shared/sample";
+import Dashboard from "./features/Dashboard";
+import Profile from "./features/Profile";
+import SearchJobs from "./features/SearchJobs";
+import MyJobs from "./features/MyJobs";
+import Messages from "./features/Messages";
+import Activities from "./features/Activities";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -25,30 +31,12 @@ function App() {
   return (
     <Routes>
       <Route element={<SidebarLayout />}>
-        <Route
-          path="/group-tour-enquiry"
-          // element={
-          //   <PrivateRoute permitAdmin={true}>
-          //     <GroupTourEnquiryView />
-          //   </PrivateRoute>
-          // }
-        />
-        <Route
-          path="/group-tour"
-          // element={
-          //   <PrivateRoute permitAdmin={true}>
-          //     <GroupTourEnquiryView />
-          //   </PrivateRoute>
-          // }
-        />
-        <Route
-          path="/group"
-          // element={
-          //   <PrivateRoute permitAdmin={true}>
-          //     <GroupTourEnquiryView />
-          //   </PrivateRoute>
-          // }
-        />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/searchJobs" element={<SearchJobs />} />
+        <Route path="/myJobs" element={<MyJobs />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/activities" element={<Activities />} />
       </Route>
 
       <Route exact path="/" element={<Landing />} />
