@@ -53,7 +53,7 @@ function App() {
       <Route exact path="/" element={<Landing />} />
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/userDetails" element={<UDLanding />} />
-      <Route exact path="/userDetails/generalInfo" element={<UDLayout />} />
+      <Route exact path="/userDetails/info" element={<UDLayout />} />
       <Route exact path="/login" element={<Signin />} />
       <Route exact path="/plans" element={<UDProfilePricing />} />
       <Route exact path="/paysuccess" element={<UDPaymentSuccess />} />

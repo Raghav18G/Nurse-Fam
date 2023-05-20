@@ -6,7 +6,7 @@
 }
 
 :root {
-  --primary-color: #A52B92;
+  --primary-color: #a52b92;
   --secondary-color: #fff;
   --accent-color: #852508;
   --navbar-color: #00352c;
@@ -41,4 +41,8 @@
 .MuiDataGrid-columnHeaders {
   background-color: #f39b60;
   color: #fff;
+}
+
+::-webkit-file-upload-button {
+  display: none;
 }
