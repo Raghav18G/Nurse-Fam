@@ -1,0 +1,44 @@
+.UDLayout--Contaner{
+
+}
+
+       
+.UDNavRight--Container{
+    display: flex;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.UDLayout--Top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+.UDLayout--Bottom{
+    display: flex;
+    margin-top: 5rem;
+
+}
+
+.UDLayout--Bottom-left{
+width:80%;
+}
+
+.UDLayout--Bottom-right{
+    width:20%;
+
+}
+
+.UDLayout--Bottom-right .MuiButton-contained {
+    background-color: #341950 !important;
+    
+  }
+
+  .UDLayout--Bottom-right .MuiButton-outlined {
+    background-color: #fff !important;
+    border:1px solid #666F80 !important;
+    color:#666F80 !important
+    
+  }
+  
+  

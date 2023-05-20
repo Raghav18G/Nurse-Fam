@@ -3,7 +3,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { adminRoleGetterService } from "./shared/services";
 
-import Login from "./features/auth";
 import PrivateRoute from "./features/routes/PrivateRoute";
 import PublicRoute from "./features/routes/PublicRoute";
 import SidebarLayout from "./features/side-bar/SidebarLayout";
@@ -16,6 +15,8 @@ import Signin from "./features/auth/Signin";
 import Landing from "./features/landing";
 import UDProfilePricing from "./features/userDetails/Profile Pricing";
 import UDPaymentSuccess from "./features/userDetails/Payment Success";
+import UDGeneralInfo from "./features/userDetails/UDGeneralInfo";
+import UDLayout from "./features/userDetails/UDLayout";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -52,6 +53,7 @@ function App() {
       <Route exact path="/" element={<Landing />} />
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/userDetails" element={<UDLanding />} />
+      <Route exact path="/userDetails/generalInfo" element={<UDLayout />} />
       <Route exact path="/login" element={<Signin />} />
       <Route exact path="/plans" element={<UDProfilePricing />} />
       <Route exact path="/paysuccess" element={<UDPaymentSuccess />} />
