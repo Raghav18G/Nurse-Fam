@@ -1,0 +1,86 @@
+.mainContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mainTitle .MuiTypography-root {
+  color: #a52b92;
+  font-weight: 700 !important;
+}
+
+.mainSubTitle {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600 !important;
+}
+.footerContainer--profile-completion {
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.completeProfile--profile-completion button {
+  background-color: #341950 !important;
+  border-radius: 5px;
+  text-transform: none;
+  /* padding: 10px; */
+}
+.completeProfile--profile-completion {
+  width: 20vw;
+}
+.skip-btn {
+  width: 20vw;
+}
+.skip-btn button {
+  border-radius: 5px;
+  text-transform: none;
+  /* padding: 10px; */
+}
+
+.cardContainer--profile-completion--parent {
+  display: flex;
+  justify-content: space-between;
+  height: 60vh;
+}
+
+.leftCardContainer--profile-completion {
+  width: 50%;
+}
+.rightCardContainer--profile-completion{
+    padding: 0px 10px 0px 10px;
+}
+.benefitsCheck {
+  display: flex;
+  flex-direction: column;
+}
+.benefitsCheck-content {
+  display: flex;
+  margin: 5px;
+}
+
+.benefitsCheck-content .MuiTypography-root {
+  font-size: small;
+  color: #666f80;
+  margin: 0px 10px 0px 10px;
+}
+.header-content .MuiTypography-root {
+  display: flex;
+  color: #666f80;
+  font-weight: 900;
+  margin: 10px 5px 10px 5px;
+}
+.select-btn {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+.select-btn button {
+  border-radius: 5px;
+  text-transform: none;
+}

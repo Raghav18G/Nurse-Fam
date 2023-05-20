@@ -1,0 +1,51 @@
+.ps-main-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.psTitle .MuiTypography-root {
+  color: #a52b92;
+  font-weight: 700 !important;
+}
+
+.ps-subtext {
+  width: 35vw;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 800 !important;
+}
+.ps-footer-div {
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.cont-btn {
+  width: 15vw;
+}
+.cont-btn button {
+  background-color: #341950 !important;
+  border-radius: 5px;
+  text-transform: none;
+}
+.support-btn {
+  width: 15vw;
+}
+.support-btn button {
+  color: #341950 !important;
+  border-radius: 5px;
+  text-transform: none;
+}
+.progress-bar {
+  padding: 10px;
+  width: 60vw;
+  /* height: 20vh; */
+}
+/* .progress-percent {
+ display: flex;
+} */

@@ -1,0 +1,9 @@
+.info-root-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.info-root-container .MuiInputLabel-root {
+  margin-bottom: 4px !important;
+}

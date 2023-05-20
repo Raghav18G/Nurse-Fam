@@ -25,34 +25,29 @@ const Hell = (props) => {
 };
 const routes = [
   {
-    id: 1,
     name: <Hell icon={<Dashboard />} text={"Dashboard"} />,
     path: "/dashboard",
   },
   {
-    id: 2,
     name: <Hell icon={<AccountCircleIcon />} text={"My Profile"} />,
     path: "/profile",
   },
   {
-    id: 2,
     name: <Hell icon={<SearchIcon />} text={"Search Jobs"} />,
     path: "/searchJobs",
   },
   {
-    id: 2,
     name: <Hell icon={<BusinessCenterIcon />} text={"My Jobs"} />,
     path: "/myJobs",
   },
   {
-    id: 10,
     name: <Hell icon={<TextsmsIcon />} text={"Messages"} />,
     path: "/messages",
   },
   {
-    id: 10,
     name: <Hell icon={<InsightsIcon />} text={"Activities"} />,
     path: "/activities",
   },
 ];
+
 export default routes;
