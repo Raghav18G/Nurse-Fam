@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardCard from "../DashboardCard";
 import { Grid } from "@mui/material";
+import DashboardBanner from "../DashboardBanner";
 
 const Sample = () => {
   return (
@@ -30,6 +31,9 @@ const Sample = () => {
             subtext="Verification Pending*"
             footerText="Complete Now"
           />
+        </Grid>
+        <Grid item xs={12} sx={{ marginTop: "5rem" }}>
+          <DashboardBanner />
         </Grid>
       </Grid>
     </div>

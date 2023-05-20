@@ -1,0 +1,20 @@
+.bannerWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.right-banner-content {
+  width: 50%;
+  height: 40vh;
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(270deg, #542a68 0%, #b16293 100%);
+}
+
+.right-banner-content img {
+  position: absolute;
+  width: 80%;
+  top: -1rem;
+}
+.left-banner-content {
+  width: 50%;
+}
