@@ -39,12 +39,23 @@ const RightTabList = () => {
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <TabList onChange={handleChange}>
-                <Tab label="My Connections" value="myConnections" />
-                <Tab label="See All" value="seeAll" />
+                <Tab
+                  label="My Connections"
+                  value="myConnections"
+                  sx={{ color: "#666F80", fontWeight: 800 }}
+                />
+                <Tab
+                  label="See All"
+                  value="seeAll"
+                  sx={{ color: "#666F80", fontWeight: 800 }}
+                />
               </TabList>
             </Box>
             <TabPanel value="myConnections">
-              <Paper elevation={4} sx={{ borderRadius: "10px" }}>
+              <Paper
+                elevation={4}
+                sx={{ borderRadius: "10px", backgroundColor: "#F9FAFE" }}
+              >
                 <Grid
                   container
                   spacing={1}
@@ -130,9 +141,7 @@ const RightTabList = () => {
                 </Grid>
               </Paper>
             </TabPanel>
-            <TabPanel value="seeAll">
-                {/* see all */}
-            </TabPanel>
+            <TabPanel value="seeAll">{/* see all */}</TabPanel>
           </TabContext>
         </Box>
       </div>
