@@ -44,10 +44,10 @@ const Sidebar = () => {
   };
 
   const handleLogout = async () => {
-    adminInfoRemovalService();
-    adminRoleRemovalService();
-    adminNameRemovalService();
-    adminIdRemovalService();
+    // adminInfoRemovalService();
+    // adminRoleRemovalService();
+    // adminNameRemovalService();
+    // adminIdRemovalService();
     navigate("/");
     // }
   };

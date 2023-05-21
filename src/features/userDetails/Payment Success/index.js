@@ -4,8 +4,10 @@ import logo from "../../../image/UDLogo.png";
 import SignupLayout from "../../auth/SignupLayout";
 import "./styles.css";
 import LinearProgress from "@mui/material/LinearProgress";
+import { useNavigate } from "react-router-dom";
 
 const UDPaymentSuccess = () => {
+  const navigate = useNavigate();
   return (
     <SignupLayout>
       <div className="ps-main-container">
@@ -59,7 +61,13 @@ const UDPaymentSuccess = () => {
             </Button>
           </div>
           <div className="cont-btn">
-            <Button variant="contained" fullWidth>
+            <Button
+              variant="contained"
+              fullWidth
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+            >
               Continue
             </Button>
           </div>
