@@ -42,7 +42,9 @@ const SidebarLayout = () => {
             borderTopLeftRadius: "20px",
             borderBottomLeftRadius: "20px",
           }}
-        ></Paper>
+        >
+          
+        </Paper>
       </Grid>
     </Grid>
   );

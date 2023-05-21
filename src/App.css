@@ -46,3 +46,19 @@
 ::-webkit-file-upload-button {
   display: none;
 }
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: linear-gradient(104deg, #000000, #044484 102%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 0.2rem;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
