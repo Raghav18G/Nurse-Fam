@@ -12,6 +12,7 @@ import {
 } from "../../shared/services";
 
 import "./style.css";
+import DashboardTab from "../../shared/DashboardTab";
 
 const SidebarLayout = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const SidebarLayout = () => {
             borderBottomLeftRadius: "20px",
           }}
         >
-          
+          <DashboardTab />
         </Paper>
       </Grid>
     </Grid>
