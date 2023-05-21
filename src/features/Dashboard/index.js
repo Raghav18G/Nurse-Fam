@@ -12,11 +12,7 @@ import DashboardBanner from "../../shared/DashboardBanner";
 import SearchIcon from "@mui/icons-material/Search";
 const Dashboard = () => {
   return (
-    <Grid
-      container
-      spacing={10}
-      sx={{ padding: "10px" }}
-    >
+    <Grid container spacing={3} sx={{ padding: "10px" }}>
       {/* serach bar */}
       <Grid item xs={8}>
         <Grid container spacing={2}>
@@ -88,7 +84,7 @@ const Dashboard = () => {
         </Grid>
       </Grid>
       {/* banner */}
-      <Grid item xs={12}>
+      <Grid item xs={12} sx={{ marginTop: "1rem" }}>
         <DashboardBanner />
       </Grid>
       {/* recommended jobs */}

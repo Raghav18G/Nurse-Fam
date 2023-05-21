@@ -5,7 +5,7 @@ import "./styles.css";
 import medfamLogo from "../../image/MedFam_Logo 02_Tag 1.svg";
 const DashboardBanner = () => {
   return (
-    <div style={{ width: "60vw" }}>
+    <div>
       <Paper
         elevation={3}
         sx={{
@@ -18,14 +18,17 @@ const DashboardBanner = () => {
               container
               spacing={1}
               sx={{
-                padding: "20px",
+                padding: "10px",
               }}
             >
               <Grid item xs={12}>
-                <img src={medfamLogo} alt="" />
+                <img src={medfamLogo} alt="" style={{ width: "150px" }} />
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="h5" sx={{fontWeight: "800"}}>
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: "800", paddingLeft: "1rem" }}
+                >
                   Join India&apos;s <br />
                   favorite Geriatric
                   <br />
@@ -38,6 +41,8 @@ const DashboardBanner = () => {
                   sx={{
                     backgroundColor: "#341950 !important",
                     textTransform: "none",
+                    borderRadius: "10px",
+                    marginLeft: "1rem",
                   }}
                 >
                   Learn More

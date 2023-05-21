@@ -49,11 +49,11 @@
 
 ::-webkit-scrollbar {
   width: 0.4rem;
-  background-color: linear-gradient(104deg, #000000, #044484 102%);
+  background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: grey;
+  background-color: #a52b92;
   border-radius: 0.2rem;
 }
 

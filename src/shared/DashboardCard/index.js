@@ -16,7 +16,6 @@ const DashboardCard = ({ white, header, text, subtext, footerText }) => {
     <Paper
       elevation={3}
       sx={{
-        height: "30vh",
         width: "30vh",
         borderRadius: "20px",
         padding: "1rem",

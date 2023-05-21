@@ -1,18 +1,27 @@
 .bannerWrapper {
   display: flex;
   flex-direction: row;
+  position: absolute;
+
 }
 .right-banner-content {
-  width: 50%;
-  /* height: 40vh;
-  position: relative; */
+  width: 60%;
   border-radius: 20px;
   background: linear-gradient(270deg, #542a68 0%, #b16293 100%);
 }
 
-.right-banner-content img {
-  width: fit-content;
-}
+
 .left-banner-content {
-  width: 50%;
+  width: 40%;
+
+}
+
+.right-banner-content {
+  position: relative;
+}
+.right-banner-content img {
+  width: auto;
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
 }
