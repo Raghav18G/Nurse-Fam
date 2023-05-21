@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 import copylogo from "../../image/copyLogo.svg";
 
-import "./styles.css";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import {
   Avatar,
   Button,
   Grid,
   IconButton,
   InputAdornment,
-  Tab,
-  Tabs,
   TextField,
+  Input,
   Typography,
 } from "@mui/material";
-import RightTabList from "./TabList";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import johnAvatar from "../../image/JohnAvatar.svg";
 import ReusableDialog from "../Dialog/ResusableDialog";
+import RightTabList from "./TabList";
+import "./styles.css";
 
 import facebook from "../../image/Facebook 1.svg";
 import linkedIn from "../../image/LinkedIn 1.svg";
 import whatsapp from "../../image/whatsapp 1.svg";
 
+const ariaLabel = { "aria-label": "description" };
+
 const DashboardTab = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [referOpen, setReferOpen] = useState(false);
   const handleDialogOpen = () => {
+    setReferOpen(true);
+  };
+  const handleEmailOpen = () => {
+    setReferOpen(false);
     setIsOpen(true);
   };
   return (
@@ -93,7 +99,20 @@ const DashboardTab = () => {
           Refer a friend
         </Button>
       </Grid>
-      {/* dialog */}
+      {/* email dialog */}
+      <ReusableDialog
+        isOpen={referOpen}
+        title="Enter Email"
+        subtitle="Enter the email id to share
+          your referral code"
+        handleClose={handleEmailOpen}
+        btnLabel="Share"
+      >
+        <div style={{ display: "flex", alignItems: "center", margin: "20px" }}>
+          <Input placeholder="Email Address" inputProps={ariaLabel} fullWidth />
+        </div>
+      </ReusableDialog>
+      {/* referal dialog  */}
 
       <ReusableDialog
         isOpen={isOpen}
