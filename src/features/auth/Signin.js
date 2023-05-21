@@ -95,7 +95,7 @@ const Signin = () => {
             <Button
               variant="contained"
               sx={{ backgroundColor: "#341950 !important", marginTop: "1rem" }}
-              onClick={() => navigate("/userDetails")}
+              onClick={() => navigate("/dashboard")}
             >
               Sign In
             </Button>

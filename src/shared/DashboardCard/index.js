@@ -6,7 +6,14 @@ import RightArrowWhite from "../../image/rightArrow-White.svg";
 
 import { bgcolor } from "@mui/system";
 
-const DashboardCard = ({ white, header, text, subtext = "", footerText }) => {
+const DashboardCard = ({
+  white,
+  header,
+  text,
+  subtext = "",
+  footerText,
+  handleClick,
+}) => {
   const headerColor = white ? "#A52B92" : "#FFF";
   const textColor = white ? "#111" : "#FFF";
   const imageIcon = white ? RightArrowBlack : RightArrowWhite;
@@ -23,7 +30,9 @@ const DashboardCard = ({ white, header, text, subtext = "", footerText }) => {
         borderRadius: "20px",
         padding: "1rem",
         background: bgColor,
+        cursor: "pointer",
       }}
+      onClick={handleClick}
     >
       <div className="DashboardCard--Container">
         <Typography sx={{ color: headerColor, fontWeight: "800" }}>
