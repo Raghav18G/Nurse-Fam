@@ -26,10 +26,10 @@ const Sample = () => {
         </Grid>
         <Grid item xs={4}>
           <DashboardCard
-            header="My Profile"
-            text="80% Completed"
+            header="My Jobs"
+            text="0 Applied For"
             subtext="Verification Pending*"
-            footerText="Complete Now"
+            footerText="Apply Here"
           />
         </Grid>
         <Grid item xs={12} sx={{ marginTop: "5rem" }}>
