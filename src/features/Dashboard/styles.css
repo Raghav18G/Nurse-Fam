@@ -1,0 +1,6 @@
+.RJCardsContainer{
+    max-height: 35vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-bottom: 2rem;
+}

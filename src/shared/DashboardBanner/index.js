@@ -26,8 +26,11 @@ const DashboardBanner = () => {
               </Grid>
               <Grid item xs={12}>
                 <Typography
-                  variant="h6"
-                  sx={{ fontWeight: "800", paddingLeft: "1rem" }}
+                  sx={{
+                    fontWeight: "800",
+                    paddingLeft: "1rem",
+                    fontWeight: 800,
+                  }}
                 >
                   Join India&apos;s <br />
                   favorite Geriatric

@@ -5,12 +5,12 @@
   
 }
 .DashboardCard--Footer{
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .DashboardCard--Content{
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
 }

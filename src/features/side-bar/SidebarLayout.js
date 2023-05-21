@@ -38,13 +38,11 @@ const SidebarLayout = () => {
           elevtion={3}
           sx={{
             backgroundColor: "fff",
-            height: "100vh",
+            height: "130vh",
             borderTopLeftRadius: "20px",
             borderBottomLeftRadius: "20px",
           }}
-        >
-          
-        </Paper>
+        ></Paper>
       </Grid>
     </Grid>
   );
