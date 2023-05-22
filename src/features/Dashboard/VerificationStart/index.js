@@ -190,8 +190,8 @@ const VerificationStart = () => {
                   backgroundColor: "#341950 !important",
                   borderRadius: "10px",
                 }}
-                onClick={()=> {
-                  navigate("/dashboard/verificationProgress")
+                onClick={() => {
+                  navigate("/dashboard/verificationProgress");
                 }}
               >
                 Submit
