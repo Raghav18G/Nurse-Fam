@@ -19,3 +19,12 @@
     }
     
   
+
+    .DashboardFiltersComponent--Container .MuiButton-contained {
+        background-color: #341950 !important;
+
+        text-decoration: none !important;
+        font-size: 12px !important;
+      }
+    
+    

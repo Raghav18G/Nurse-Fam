@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import { Grid, NativeSelect, Typography } from "@mui/material";
 import DashboardSearchJobsCard from "../../shared/DashboardSearchJobsCard";
 import DashboardFiltersComponent from "../../shared/DashboardFiltersComponent";
 
 const SearchJobs = () => {
+  const [searchFilters, setSearchFilters] = useState([]);
+  console.log("SEARCH FILTERS", searchFilters);
   return (
     <div className="SearchJobs--Container">
       <div className="SearchJobs--Top">
-        <DashboardFiltersComponent />
+        <DashboardFiltersComponent
+          filters={searchFilters}
+          setFilters={setSearchFilters}
+        />
       </div>
       <div className="SearchJobs--Bottom">
         <Grid container>
