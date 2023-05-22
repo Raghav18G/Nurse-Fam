@@ -24,6 +24,9 @@ import SearchJobs from "./features/SearchJobs";
 import MyJobs from "./features/MyJobs";
 import Messages from "./features/Messages";
 import Activities from "./features/Activities";
+import VerificationStart from "./features/Dashboard/VerificationStart";
+import VerificationProgress from "./features/Dashboard/VerificationProgress";
+import VerificationSuccess from "./features/Dashboard/VerificationSuccess";
 
 function App() {
   const admin_role = adminRoleGetterService();
@@ -31,7 +34,20 @@ function App() {
   return (
     <Routes>
       <Route element={<SidebarLayout />}>
+        {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard/verificationStart"
+          element={<VerificationStart />}
+        />
+        <Route
+          path="/dashboard/verificationProgress"
+          element={<VerificationProgress />}
+        />
+        <Route
+          path="/dashboard/verificationSuccess"
+          element={<VerificationSuccess />}
+        />
         <Route path="/profile" element={<Profile />} />
         <Route path="/searchJobs" element={<SearchJobs />} />
         <Route path="/myJobs" element={<MyJobs />} />
