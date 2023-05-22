@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Facebook from "../../image/signup/Facebook.png";
 import Google from "../../image/signup/Google.png";
 import Linkedin from "../../image/signup/LinkedIn.png";
@@ -22,7 +22,7 @@ import {
   Typography,
 } from "@mui/material";
 import OTPInput from "react-otp-input";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   OTPVerify,
@@ -35,9 +35,13 @@ const ariaLabel = { "aria-label": "description" };
 
 const Signup = () => {
   const dispatch = useDispatch();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log("PARAMS", searchParams.get("uid"));
+
   const [isOpen, setIsOpen] = useState(false);
   const [otp, setOtp] = useState("");
-  const [signupInfo, setSignupInfo] = useState({
+  var [signupInfo, setSignupInfo] = useState({
     first_name: "",
     last_name: "",
     email: "",
@@ -49,6 +53,7 @@ const Signup = () => {
   const [verifyOpen, setVerifyOpen] = useState(false);
   const [phoneMessage, setPhoneMessage] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(null);
+  const [uid, setUID] = useState(null);
   const [verificationMessageID, setVerificationMessageID] = useState(null);
   console.log("MESSAGE", verificationMessageID);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
@@ -86,6 +91,11 @@ const Signup = () => {
     console.log("SIGNUP OTP VERIFY", response);
     if (response.status == 200) {
       setVerifyOpen(false);
+
+      if (searchParams.get("uid") != null) {
+        signupInfo.uid = searchParams.get("uid");
+      }
+
       let signUpResponse = await SignupService(signupInfo);
       if (signUpResponse?.data?.status == 200) {
         console.log("SUCCESFLUUUUUUUU");
@@ -115,6 +125,8 @@ const Signup = () => {
       [name]: value,
     }));
   };
+
+  useEffect(() => {}, []);
   return (
     <SignupLayout>
       <div className="signupContainer">

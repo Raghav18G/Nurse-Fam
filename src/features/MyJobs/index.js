@@ -8,6 +8,7 @@ import "./styles.css";
 import { Button, Grid, NativeSelect, Typography } from "@mui/material";
 import MyJobCard from "../../shared/MyJobCard";
 import { getAppliedJobsService } from "../../services";
+
 const MyJobs = () => {
   const [value, setValue] = React.useState("appliedJobs");
   const [appliedJobCards, setAppliedJobCards] = React.useState([]);
@@ -136,7 +137,6 @@ const MyJobs = () => {
                   <MyJobCard
                     location={obj?.location}
                     salary={obj?.salary_range}
-                    job_title={obj?.job_title}
                   />
                 </>
               ))}
