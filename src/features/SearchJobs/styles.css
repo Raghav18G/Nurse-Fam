@@ -1,13 +1,30 @@
 .SearchJobs--Container {
-  padding: 2rem;
+  padding: 1rem;
   padding-top: 4rem;
 }
 
 .SearchJobs--Top {
-  height: 40vh;
+  height: 35vh;
 }
 
 .SearchJobs--Bottom {
-  height: 70vh;
+  height: 75vh;
   overflow-y: scroll;
 }
+
+
+
+.SORTFilter .MuiInputBase-input {
+    color: #E1A7CB !important;
+    font-size: 12px !important;
+   
+  }
+
+  .SORTFilter .MuiInputBase-input option {
+      color: #111 !important;
+      font-size: 12px !important;
+     background-color: transparent !important;
+     border:none !important;
+     padding:2px !important
+  
+    }
