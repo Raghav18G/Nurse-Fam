@@ -109,6 +109,16 @@ const DashboardTab = () => {
               enterDelay={500}
               leaveDelay={200}
               arrow
+              componentsProps={{
+                tooltip: {
+                  sx: {
+                    backgroundColor: "#341950 !important",
+                    "& .MuiTooltip-arrow": {
+                      color: "#341950 !important",
+                    },
+                  },
+                },
+              }}
             >
               <Button
                 variant="outlined"
