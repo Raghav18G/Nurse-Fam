@@ -15,7 +15,12 @@ import DashboardBanner from "../../shared/DashboardBanner";
 import SearchIcon from "@mui/icons-material/Search";
 import DashboardRJCard from "../../shared/DashboardRJCard";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    navigate("/userDetails");
+  };
   return (
     <Grid container spacing={2} sx={{ padding: "10px" }}>
       {/* serach bar */}
@@ -67,6 +72,7 @@ const Dashboard = () => {
               text="80% Completed"
               subtext="Verification Pending*"
               footerText="Complete Now"
+              handleClick={handleCardClick}
             />
           </Grid>
           <Grid item xs={4}>
@@ -74,6 +80,7 @@ const Dashboard = () => {
               header="My Jobs"
               text="0 Applied For"
               footerText="Apply Here"
+              handleClick={handleCardClick}
             />
           </Grid>
           <Grid item xs={4}>
@@ -83,6 +90,7 @@ const Dashboard = () => {
               text="80% Completed"
               subtext="Verification Pending*"
               footerText="Complete Now"
+              handleClick={handleCardClick}
             />
           </Grid>
         </Grid>
