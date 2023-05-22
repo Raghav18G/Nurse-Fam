@@ -31,7 +31,6 @@ export const OTPVerify = async (payload) => {
 export const SignupService = async (payload) => {
   try {
     const response = await axiosInstance.post("/signup/", payload);
-    console.log("Response of Signup API", response);
     return response;
   } catch (e) {
     return { error: e.response.data };
@@ -46,7 +45,6 @@ export const GetConnections = async (payload) => {
       { headers: { Authorization: `Bearer ${get_Token()}` } },
       payload
     );
-    console.log("Response of GetConnections", response);
     return response;
   } catch (e) {
     return { error: e.response.data };
@@ -60,7 +58,63 @@ export const setGeneralInformation = async (payload) => {
     const response = await axiosInstance.patch("/nurse/generalinfo/", payload, {
       headers: { Authorization: `Bearer ${get_Token()}` },
     });
-    console.log("Response of setGeneralInformation API", response);
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+
+//  nurse complete
+export const getNurseCompletion = async (payload) => {
+  try {
+    const response = await axiosInstance.get(
+      "/nurse/complition/",
+      { headers: { Authorization: `Bearer ${get_Token()}` } },
+      payload
+    );
+
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+//  nurse applied jobs
+export const getNurseAppliedJobs = async (payload) => {
+  try {
+    const response = await axiosInstance.get(
+      "/nurse/appliedjob/",
+      { headers: { Authorization: `Bearer ${get_Token()}` } },
+      payload
+    );
+
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+//  nurse invite
+export const getNurseInvite = async (payload) => {
+  try {
+    const response = await axiosInstance.get(
+      "/nurse/invities/",
+      { headers: { Authorization: `Bearer ${get_Token()}` } },
+      payload
+    );
+
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+
+export const getUserDetails = async (payload) => {
+  try {
+    const response = await axiosInstance.get(
+      "/nurse/invities/",
+      { headers: { Authorization: `Bearer ${get_Token()}` } },
+      payload
+    );
+
     return response;
   } catch (e) {
     return { error: e.response.data };

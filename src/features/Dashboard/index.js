@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   FormControl,
@@ -16,11 +16,39 @@ import SearchIcon from "@mui/icons-material/Search";
 import DashboardRJCard from "../../shared/DashboardRJCard";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
+import {
+  getNurseAppliedJobs,
+  getNurseCompletion,
+  getNurseInvite,
+} from "../../services";
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [nurseCompletion, setNurseCompletion] = useState();
+  const [nurseApplied, setNurseApplied] = useState();
+  const [nurseInvited, setNurseInvited] = useState();
   const handleCardClick = () => {
     navigate("/userDetails");
   };
+  const getCardsData = async () => {
+    let completionResponse = await getNurseCompletion();
+    let appliedResponse = await getNurseAppliedJobs();
+    let inviteResponse = await getNurseInvite();
+
+    if (completionResponse?.data?.status == 200) {
+      console.log("Response", completionResponse);
+      setNurseCompletion(completionResponse?.data.complition);
+    }
+    if (appliedResponse?.data?.status == 200) {
+      setNurseApplied(appliedResponse?.data.complition);
+    }
+    if (inviteResponse?.data?.status == 200) {
+      setNurseInvited(inviteResponse?.data.complition);
+    }
+  };
+
+  useEffect(() => {
+    getCardsData();
+  }, []);
   return (
     <Grid container spacing={2} sx={{ padding: "10px" }}>
       {/* serach bar */}
@@ -69,7 +97,7 @@ const Dashboard = () => {
             <DashboardCard
               white
               header="My Profile"
-              text="80% Completed"
+              text={`${nurseCompletion}% Completed`}
               subtext="Verification Pending*"
               footerText="Complete Now"
               handleClick={handleCardClick}
@@ -78,7 +106,7 @@ const Dashboard = () => {
           <Grid item xs={4}>
             <DashboardCard
               header="My Jobs"
-              text="0 Applied For"
+              text={`${nurseApplied} Applied For`}
               footerText="Apply Here"
               // handleClick={handleCardClick}
             />
@@ -87,7 +115,7 @@ const Dashboard = () => {
             <DashboardCard
               white
               header="Invites"
-              text="16 New Requests"
+              text={`${nurseInvited} New Requests`}
               footerText="All Invites"
               // handleClick={handleCardClick}
             />
