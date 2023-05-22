@@ -4,7 +4,7 @@ import "./styles.css";
 
 import logo from "../../image/RJCARDPHOTO.svg";
 
-const MyJobCard = () => {
+const MyJobCard = ({ location, salary, job_title }) => {
   return (
     <div className="MyJobCard--Container">
       <Paper elevation={3} sx={{ height: "15vh", borderRadius: "20px" }}>
@@ -19,7 +19,7 @@ const MyJobCard = () => {
                   <Grid item xs={3}>
                     <Typography sx={{ fontWeight: 800, fontSize: "14px" }}>
                       {" "}
-                      Nursing Staff
+                      {job_title}
                     </Typography>
                   </Grid>
                   <Grid item xs={3} sx={{ textAlign: "right" }}>
@@ -71,7 +71,7 @@ const MyJobCard = () => {
                 <Typography
                   sx={{ color: "#666F80", fontSize: "12px", fontWeight: 700 }}
                 >
-                  Location - Bangalore, IN{" "}
+                  Location - {location}
                 </Typography>
               </Grid>
             </Grid>
@@ -80,7 +80,7 @@ const MyJobCard = () => {
             <Grid container>
               <Grid item xs={12}>
                 <Typography sx={{ color: "#542A68", fontWeight: 800 }}>
-                  INR 20,00,000
+                  INR {salary}
                 </Typography>
               </Grid>
               <Grid item xs={12}>

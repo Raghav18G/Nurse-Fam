@@ -283,9 +283,9 @@ export const applyJob = async (payload) => {
   }
 };
 
-export const getAppliedJobs = async (payload) => {
+export const getAppliedJobsService = async (payload) => {
   try {
-    const response = await axiosInstance.get(`/nurse/sh`, {
+    const response = await axiosInstance.get(`/nurse/allapply`, {
       headers: { Authorization: `Bearer ${get_Token()}` },
     });
 

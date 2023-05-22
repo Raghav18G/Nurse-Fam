@@ -7,12 +7,26 @@ import * as React from "react";
 import "./styles.css";
 import { Button, Grid, NativeSelect, Typography } from "@mui/material";
 import MyJobCard from "../../shared/MyJobCard";
+import { getAppliedJobsService } from "../../services";
 const MyJobs = () => {
   const [value, setValue] = React.useState("appliedJobs");
-
+  const [appliedJobCards, setAppliedJobCards] = React.useState([]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const getAppliedJobs = async () => {
+    const response = await getAppliedJobsService();
+    console.log("Response", response);
+    if (response?.data?.status == 200) {
+      setAppliedJobCards(response?.data?.jobs);
+    }
+  };
+
+  React.useEffect(() => {
+    getAppliedJobs();
+  }, []);
+
   return (
     <div
       style={{
@@ -113,9 +127,19 @@ const MyJobs = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <TabPanel value="appliedJobs" sx={{ color: "#341950" }}>
-              <MyJobCard />
-              <MyJobCard />
+            <TabPanel
+              value="appliedJobs"
+              sx={{ color: "#341950", overflow: "scroll" }}
+            >
+              {appliedJobCards?.map((obj, index) => (
+                <>
+                  <MyJobCard
+                    location={obj?.location}
+                    salary={obj?.salary_range}
+                    job_title={obj?.job_title}
+                  />
+                </>
+              ))}
             </TabPanel>
             <TabPanel value="savedJobs" sx={{ color: "#341950" }}>
               {/* see all */}
