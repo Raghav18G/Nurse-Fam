@@ -171,20 +171,6 @@ export const getNurseInvite = async (payload) => {
   }
 };
 
-export const getUserDetails = async (payload) => {
-  try {
-    const response = await axiosInstance.get(
-      "/nurse/invities/",
-      { headers: { Authorization: `Bearer ${get_Token()}` } },
-      payload
-    );
-
-    return response;
-  } catch (e) {
-    return { error: e.response.data };
-  }
-};
-
 //UserDetails
 
 export const getUserDetails = async (payload) => {
