@@ -2,6 +2,7 @@ import React from "react";
 import DashboardCard from "../DashboardCard";
 import { Grid } from "@mui/material";
 import DashboardBanner from "../DashboardBanner";
+import DashboardSearchJobsCard from "../DashboardSearchJobsCard";
 
 const Sample = () => {
   return (
@@ -34,6 +35,9 @@ const Sample = () => {
         </Grid>
         <Grid item xs={12} sx={{ marginTop: "5rem" }}>
           <DashboardBanner />
+        </Grid>
+        <Grid item xs={12} sx={{ marginTop: "5rem" }}>
+          <DashboardSearchJobsCard />
         </Grid>
       </Grid>
     </div>

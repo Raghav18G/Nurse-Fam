@@ -11,6 +11,7 @@ import {
   TextField,
   Input,
   Typography,
+  Tooltip,
 } from "@mui/material";
 import johnAvatar from "../../image/JohnAvatar.svg";
 import ReusableDialog from "../Dialog/ResusableDialog";
@@ -33,6 +34,13 @@ const DashboardTab = () => {
     setReferOpen(false);
     setIsOpen(true);
   };
+
+  const content = (
+    <div>
+      <h2> HELLO</h2>
+      <Button>OO bete</Button>
+    </div>
+  );
   return (
     <Grid container spacing={1}>
       {/* top nav bar */}
@@ -59,18 +67,20 @@ const DashboardTab = () => {
             <Avatar alt="john" src={johnAvatar} />
           </Grid>
           <Grid item xs={6}>
-            <Button
-              variant="outlined"
-              // fullWidth
-              sx={{
-                textTransform: "none",
-                borderRadius: "5px",
-                color: "#111 !important",
-                border: "2px solid #A52B92",
-              }}
-            >
-              Verify Now
-            </Button>
+            <Tooltip title={content} enterDelay={500} leaveDelay={200}>
+              <Button
+                variant="outlined"
+                // fullWidth
+                sx={{
+                  textTransform: "none",
+                  borderRadius: "5px",
+                  color: "#111 !important",
+                  border: "2px solid #A52B92",
+                }}
+              >
+                Verify Now
+              </Button>
+            </Tooltip>
           </Grid>
         </Grid>
       </Grid>
