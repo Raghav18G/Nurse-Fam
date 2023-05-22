@@ -23,8 +23,9 @@ import {
 } from "@mui/material";
 import OTPInput from "react-otp-input";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { mobileVerify } from "./Redux/actionCreator";
+import { useDispatch, useSelector } from "react-redux";
+import { OTPVerify, getMobileVerifyMessage } from "../../services";
+import { signup } from "./Redux/actionCreator";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -44,7 +45,8 @@ const Signup = () => {
   const [verifyOpen, setVerifyOpen] = useState(false);
   const [phoneMessage, setPhoneMessage] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(null);
-
+  const [verificationMessageID, setVerificationMessageID] = useState(null);
+  console.log("MESSAGE", verificationMessageID);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const handleClickConfirmShowPassword = () =>
@@ -54,17 +56,34 @@ const Signup = () => {
   const handleDialogOpen = () => {
     setIsOpen(true);
   };
-  const handleVerifyOpen = () => {
+  const handleVerifyOpen = async () => {
     if (phoneNumber.length == 10) {
       console.log("VALID PHONE NUMBER");
       setPhoneMessage("");
-      dispatch(mobileVerify(phoneNumber));
+      let response = await getMobileVerifyMessage(phoneNumber);
+      console.log("SIGNUP PAGE", response);
+      if (response.status == 200) {
+        setVerificationMessageID(response?.data?.message);
+        setIsOpen(false);
+        setVerifyOpen(true);
+      }
     } else {
       setPhoneMessage("please enter a valid phone number.");
     }
+  };
 
-    // setIsOpen(false);
-    // setVerifyOpen(true);
+  const OTPHandler = async (e) => {
+    console.log("OTP", otp);
+    let response = await OTPVerify({
+      otp: otp,
+      message: verificationMessageID,
+    });
+    console.log("SIGNUP OTP VERIFY", response);
+    if (response.status == 200) {
+      setVerifyOpen(false);
+      dispatch(signup())
+      // navigate("/login");
+    }
   };
 
   const handlePhoneNumber = (e) => {
@@ -315,10 +334,7 @@ const Signup = () => {
           isOpen={verifyOpen}
           title="Verification"
           subtitle="We have sent code to your on your number +91 98*******1"
-          handleClose={() => {
-            setVerifyOpen(false);
-            navigate("/login");
-          }}
+          handleClose={OTPHandler}
           btnLabel="Verify"
           footerText={true}
           footerTextContent={

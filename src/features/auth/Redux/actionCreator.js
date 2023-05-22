@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import Cookies from "universal-cookie";
 import axiosInstance from "../../../axios";
+import { Signup } from "../../../services";
 
 const cookies = new Cookies();
 // Login Action
@@ -11,7 +12,7 @@ export const login = createAsyncThunk(`auth/login`, async (payload) => {
   const response = await axiosInstance.post("/signin/", payload);
   console.log("Response of Login API", response);
   if (response?.data?.status == 200) {
-    cookies.set("t_id", response?.data?.refresh);
+    cookies.set("t_id", response?.data?.access);
     return response;
   }
   return response;
@@ -29,19 +30,11 @@ export const logout = createAsyncThunk("auth/logout", () => {
 });
 
 //Sign up Actions
-
-// Mobile Verify Action
-export const mobileVerify = createAsyncThunk(
-  `auth/signup/MobileVerify`,
-  async (payload) => {
-    console.log("Mobile Verification ACTION");
-    console.log("PAYLOAD Mobile", payload);
-    const response = await axiosInstance.get(`/sendotp?phno=${payload}`);
-    console.log("Response of Mobile Verification API", response);
-    if (response?.data?.status == 200) {
-      console.log("OTP SENT");
-      return response?.data;
-    }
-    return response?.data;
+export const signup = createAsyncThunk(`auth/signup`, async (payload) => {
+  const response = await Signup(payload);
+  if (response?.data?.status == 200) {
+    console.log("SIGN UP SUCCESFULL", response);
+    return response;
   }
-);
+  return response;
+});
