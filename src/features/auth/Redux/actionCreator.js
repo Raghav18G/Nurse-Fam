@@ -28,13 +28,3 @@ export const logout = createAsyncThunk("auth/logout", () => {
     console.log({ e });
   }
 });
-
-//Sign up Actions
-export const signup = createAsyncThunk(`auth/signup`, async (payload) => {
-  const response = await Signup(payload);
-  if (response?.data?.status == 200) {
-    console.log("SIGN UP SUCCESFULL", response);
-    return response;
-  }
-  return response;
-});

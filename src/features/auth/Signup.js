@@ -24,7 +24,11 @@ import {
 import OTPInput from "react-otp-input";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { OTPVerify, getMobileVerifyMessage } from "../../services";
+import {
+  OTPVerify,
+  SignupService,
+  getMobileVerifyMessage,
+} from "../../services";
 import { signup } from "./Redux/actionCreator";
 
 const ariaLabel = { "aria-label": "description" };
@@ -54,6 +58,7 @@ const Signup = () => {
   const handleMouseDownConfirmPassword = () =>
     setShowPasswordConfirm(!showPasswordConfirm);
   const handleDialogOpen = () => {
+    console.log("SIGNUP CREDS", signupInfo);
     setIsOpen(true);
   };
   const handleVerifyOpen = async () => {
@@ -81,8 +86,11 @@ const Signup = () => {
     console.log("SIGNUP OTP VERIFY", response);
     if (response.status == 200) {
       setVerifyOpen(false);
-      dispatch(signup())
-      // navigate("/login");
+      let signUpResponse = await SignupService(signupInfo);
+      if (signUpResponse?.data?.status == 200) {
+        console.log("SUCCESFLUUUUUUUU");
+        navigate("/login");
+      }
     }
   };
 

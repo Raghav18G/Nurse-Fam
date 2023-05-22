@@ -27,7 +27,7 @@ export const OTPVerify = async (payload) => {
   }
 };
 
-export const Signup = async (payload) => {
+export const SignupService = async (payload) => {
   try {
     const response = await axiosInstance.post("/signup/", payload);
     console.log("Response of Signup API", response);

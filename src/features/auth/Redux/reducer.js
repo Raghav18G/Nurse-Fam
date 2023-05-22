@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import initialState from "./state";
-import { login, logout } from "./actionCreator";
+import { login, logout, signup } from "./actionCreator";
+import { Navigate } from "react-router-dom";
 
 export const authSlice = createSlice({
   name: "auth",
