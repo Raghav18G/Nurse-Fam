@@ -28,14 +28,14 @@ const VerificationSuccess = () => {
         <Typography sx={{ color: "#666F80", fontWeight: 800 }}>
           Get Verified
         </Typography>
-        <img
+        {/* <img
           src={verifiedRightArrow}
           alt=""
           onClick={handleBack}
           width={50}
           height={30}
           style={{ cursor: "pointer" }}
-        />
+        /> */}
       </Grid>
       <Grid item xs={12} sx={{ marginTop: "1rem" }}>
         <Paper
