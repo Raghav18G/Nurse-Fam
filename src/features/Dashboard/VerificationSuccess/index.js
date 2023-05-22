@@ -1,9 +1,12 @@
 import { Button, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import verifiedLogo from "../../../image/verified 1.svg";
+import verifiedRightArrow from "../../../image/verifiedRightArrow.svg";
 import "./styles.css";
 const VerificationSuccess = () => {
- 
+  const navigate = useNavigate();
+
   return (
     <Grid
       container
@@ -23,7 +26,6 @@ const VerificationSuccess = () => {
         <Typography sx={{ color: "#666F80", fontWeight: 800 }}>
           Get Verified
         </Typography>
-     
       </Grid>
       <Grid item xs={12} sx={{ marginTop: "1rem" }}>
         <Paper
