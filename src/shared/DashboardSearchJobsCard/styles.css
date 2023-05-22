@@ -1,3 +1,13 @@
-.DBSearchJobsCard--Container{
+.DBSearchJobsCard--Container {
+    margin:1rem;
  
 }
+
+.DBSearchJobsCard--Container .MuiButton-contained {
+    background-color: #341950 !important;
+
+    text-decoration: none !important;
+  }
+
+
+  

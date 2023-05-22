@@ -37,7 +37,33 @@ const Sample = () => {
           <DashboardBanner />
         </Grid>
         <Grid item xs={12} sx={{ marginTop: "5rem" }}>
-          <DashboardSearchJobsCard />
+          <DashboardSearchJobsCard
+            title="Nursing Staff"
+            subtitle="HCG Technology"
+            location="Bangalore, IN"
+            amount="INR 3L-6L/Year"
+            time="3 Days Ago"
+            promotedButton={true}
+            newButton={true}
+            isbookMarkEmpty={false}
+            description={
+              <p>
+                Monitoring patient’s condition and assessing their needs to
+                provide the best possible care. Advice, observe and interpreting
+                their symptoms....
+                <span
+                  style={{
+                    color: "#A52B92",
+                    cursor: "pointer",
+                    textUnderlinePosition: "under",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Read More
+                </span>
+              </p>
+            }
+          />
         </Grid>
       </Grid>
     </div>

@@ -1,0 +1,13 @@
+.SearchJobs--Container{
+padding: 2rem;
+padding-top: 4rem;
+}
+
+.SearchJobs--Top{
+height:40vh
+}
+
+.SearchJobs--Bottom{
+    height:70vh;
+    overflow-y: scroll;
+}
