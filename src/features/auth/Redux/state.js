@@ -2,7 +2,7 @@
 // const cookies = new Cookie();
 
 let state = {
-  //   t_id: cookies.get("t_id") || "",
+  t_id: "",
   loading: false,
   error: "",
   success: false,
