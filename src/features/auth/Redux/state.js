@@ -8,7 +8,7 @@ let state = {
   success: false,
   signup: {
     signup_loading: false,
-    temp_pass: "",
+    signup_mobile_verification_message: null,
     signup_error: "",
     signup_success: false,
   },

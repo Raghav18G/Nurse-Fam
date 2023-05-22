@@ -8,17 +8,13 @@ export const login = createAsyncThunk(`auth/login`, async (payload) => {
   console.log("LOGIN ACTION");
   let t_id = "";
   console.log("PAYLOAD LOGIN", payload);
-
   const response = await axiosInstance.post("/signin/", payload);
   console.log("Response of Login API", response);
-  if (
-    payload?.email == "test123@gmail.com" &&
-    payload?.password == "Test@0321"
-  ) {
-    cookies.set("t_id", "1234");
-    return "1234";
+  if (response?.data?.status == 200) {
+    cookies.set("t_id", response?.data?.refresh);
+    return response;
   }
-  return t_id;
+  return response;
 });
 
 // Logout Action
@@ -31,3 +27,21 @@ export const logout = createAsyncThunk("auth/logout", () => {
     console.log({ e });
   }
 });
+
+//Sign up Actions
+
+// Mobile Verify Action
+export const mobileVerify = createAsyncThunk(
+  `auth/signup/MobileVerify`,
+  async (payload) => {
+    console.log("Mobile Verification ACTION");
+    console.log("PAYLOAD Mobile", payload);
+    const response = await axiosInstance.get(`/sendotp?phno=${payload}`);
+    console.log("Response of Mobile Verification API", response);
+    if (response?.data?.status == 200) {
+      console.log("OTP SENT");
+      return response?.data;
+    }
+    return response?.data;
+  }
+);

@@ -23,15 +23,21 @@ import {
 } from "@mui/material";
 import OTPInput from "react-otp-input";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { mobileVerify } from "./Redux/actionCreator";
 
 const ariaLabel = { "aria-label": "description" };
 
 const Signup = () => {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [otp, setOtp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
   const [verifyOpen, setVerifyOpen] = useState(false);
+  const [phoneMessage, setPhoneMessage] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(null);
+
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const handleClickConfirmShowPassword = () =>
@@ -42,8 +48,22 @@ const Signup = () => {
     setIsOpen(true);
   };
   const handleVerifyOpen = () => {
-    setIsOpen(false);
-    setVerifyOpen(true);
+    if (phoneNumber.length == 10) {
+      console.log("VALID PHONE NUMBER");
+      setPhoneMessage("");
+      dispatch(mobileVerify(phoneNumber));
+    } else {
+      setPhoneMessage("please enter a valid phone number.");
+    }
+
+    // setIsOpen(false);
+    // setVerifyOpen(true);
+  };
+
+  const handlePhoneNumber = (e) => {
+    console.log("Phone Number", e.target.value);
+    let phoneNumber = e.target.value;
+    setPhoneNumber(phoneNumber);
   };
 
   const navigate = useNavigate();
@@ -244,13 +264,25 @@ const Signup = () => {
           btnLabel="Send OTP"
         >
           <div
-            style={{ display: "flex", alignItems: "center", margin: "20px" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              margin: "20px",
+            }}
           >
             <Input
               placeholder="Enter 10-digit Number"
               inputProps={ariaLabel}
               fullWidth
+              type="tel"
+              onChange={handlePhoneNumber}
             />
+            <span
+              style={{ fontWeight: 400, color: "red", marginTop: "0.5rem" }}
+            >
+              {phoneMessage}
+            </span>
           </div>
         </ReusableDialog>
          

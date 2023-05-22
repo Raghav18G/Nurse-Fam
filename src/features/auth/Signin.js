@@ -35,15 +35,13 @@ const Signin = () => {
 
   const handleSubmit = () => {
     console.log("CREDENTIALS", credentials);
-    navigate("/dashboard");
+    // navigate("/dashboard");
     dispatch(login(credentials));
   };
 
   const handleCredsChange = (e) => {
     console.log("CREDS CHANGED");
-
     const { name, value } = e.target;
-
     setCredentials((prev) => ({
       ...prev,
       [name]: value,

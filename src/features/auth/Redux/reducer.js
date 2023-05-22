@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import initialState from "./state";
-import { login, logout } from "./actionCreator";
+import { login, logout, mobileVerify } from "./actionCreator";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -12,9 +12,12 @@ export const authSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(login.fulfilled, (state, action) => {
-      state.t_id = action?.payload;
+      console.log("TID In REDUCER", action?.payload);
+      state.t_id = action?.payload?.data?.refresh;
       state.loading = false;
-      state.error = "";
+      if (action?.payload?.data?.status != 200) {
+        state.error = action?.payload?.data?.message;
+      }
     });
     builder.addCase(login.rejected, (state, action) => {
       const msg = action?.error?.message;
@@ -39,6 +42,20 @@ export const authSlice = createSlice({
       state.loading = false;
       state.success = false;
       state.error = action?.payload;
+    });
+
+    //Mobile Verification
+    builder.addCase(mobileVerify.pending, (state) => {});
+    builder.addCase(mobileVerify.fulfilled, (state, action) => {
+      if (action?.payload?.status == 200) {
+        console.log("In Reducer", action?.payload);
+        state.signup.signup_mobile_verification_message =
+          action?.payload?.data?.message;
+      }
+    });
+    builder.addCase(mobileVerify.rejected, (state, action) => {
+      const msg = action?.message;
+      state.loading = false;
     });
   },
 });
