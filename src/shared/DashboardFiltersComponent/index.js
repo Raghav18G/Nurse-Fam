@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { Button, Grid, NativeSelect, Paper, Typography } from "@mui/material";
-const DashboardFiltersComponent = ({ filters, setFilters }) => {
+import { getJobDetails, getLocationDetails } from "../../services";
+const DashboardFiltersComponent = ({
+  filters,
+  setFilters,
+  setJobDetails,
+  jobDetails,
+}) => {
+  const [locationOptions, setLocationOptions] = useState([]);
+  const [filterPayload, setFiltersPayload] = useState({
+    employee_type: "",
+    location: "",
+  });
+
+  const getLocationOptions = async () => {
+    let response = await getLocationDetails();
+    console.log("OPTIONS", response);
+    setLocationOptions(response?.locations);
+  };
   const handleLocationChange = (e) => {
     console.log("Location", e.target.value);
     let newValue = e.target.value;
+    setFiltersPayload({ ...filterPayload, location: newValue });
     setFilters([...filters, newValue]);
   };
 
   const handleJobTypeChange = (e) => {
     console.log("Job Type", e.target.value);
     let newValue = e.target.value;
+    setFiltersPayload({ ...filterPayload, employee_type: newValue });
     setFilters([...filters, newValue]);
   };
 
@@ -28,6 +47,17 @@ const DashboardFiltersComponent = ({ filters, setFilters }) => {
     setFilters([]);
   };
 
+  const handleClick = async (e) => {
+    let response = await getJobDetails(filterPayload);
+    console.log("response after filtering", response);
+    if (response) {
+      setJobDetails(response);
+    }
+  };
+
+  useEffect(() => {
+    getLocationOptions();
+  }, []);
   return (
     <div className="DashboardFiltersComponent--Container">
       <Grid conatiner>
@@ -55,10 +85,11 @@ const DashboardFiltersComponent = ({ filters, setFilters }) => {
                       id: "uncontrolled-native",
                     }}
                   >
-                    <option value={"Bangalore"}>Bangalore</option>
-                    <option value={"Gurugram"}>Gurugram</option>
-                    <option value={"Delhi"}>Delhi</option>
-                    <option value={"Pune"}>Pune</option>
+                    {locationOptions?.map((item, index) => (
+                      <>
+                        <option value={item}>{item}</option>
+                      </>
+                    ))}
                   </NativeSelect>
                 </Grid>
               </Grid>
@@ -80,9 +111,8 @@ const DashboardFiltersComponent = ({ filters, setFilters }) => {
                       id: "uncontrolled-native",
                     }}
                   >
-                    <option value={"Full Time"}>Full Time</option>
-                    <option value={"Part Time"}>Part Time</option>
-                    <option value={"Intern"}>Intern</option>
+                    <option value={"full_time"}>Full Time</option>
+                    <option value={"part_time"}>Part Time</option>
                   </NativeSelect>
                 </Grid>
               </Grid>
@@ -135,7 +165,9 @@ const DashboardFiltersComponent = ({ filters, setFilters }) => {
             <Grid item xs={4} sx={{ marginTop: "0.5rem" }}>
               <Grid container>
                 <Grid item xs={7}>
-                  <Button variant="contained">Apply Filters</Button>
+                  <Button variant="contained" onClick={handleClick}>
+                    Apply Filters
+                  </Button>
                 </Grid>
                 <Grid
                   item

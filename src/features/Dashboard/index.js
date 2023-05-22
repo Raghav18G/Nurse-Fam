@@ -20,12 +20,14 @@ import {
   getNurseAppliedJobs,
   getNurseCompletion,
   getNurseInvite,
+  getUserDetails,
 } from "../../services";
 const Dashboard = () => {
   const navigate = useNavigate();
   const [nurseCompletion, setNurseCompletion] = useState();
   const [nurseApplied, setNurseApplied] = useState();
   const [nurseInvited, setNurseInvited] = useState();
+
   const handleCardClick = () => {
     navigate("/userDetails");
   };

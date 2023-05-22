@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Outlet, useNavigate } from "react-router-dom";
 import { AppBar, Button, Grid, Paper, Toolbar } from "@mui/material";
@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar";
 
 import "./style.css";
 import DashboardTab from "../../shared/DashboardTab";
+import { getUserDetails } from "../../services";
 
 const SidebarLayout = () => {
   const navigate = useNavigate();

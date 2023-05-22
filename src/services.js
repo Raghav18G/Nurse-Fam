@@ -184,7 +184,7 @@ export const getUserDetails = async (payload) => {
     }
     return response?.data;
   } catch (e) {
-    return { error: e.response.data };
+    return { error: e.response };
   }
 };
 
@@ -202,6 +202,40 @@ export const verificationService = async (payload) => {
     console.log("Response of Verification API", response);
     return response;
   } catch (e) {
-    return { error: e.response.data };
+    return { error: e.response };
+  }
+};
+
+export const getJobDetails = async (payload) => {
+  try {
+    console.log("GET JOb Details");
+    const response = await axiosInstance.get(
+      `/nurse/job/?employee_type=${payload.employee_type}&location=${payload.location}`,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+
+    if (response?.data?.status == 200) {
+      return response?.data;
+    }
+    return response?.data;
+  } catch (e) {
+    return { error: e.response };
+  }
+};
+
+export const getLocationDetails = async (payload) => {
+  try {
+    const response = await axiosInstance.get(`/nurse/location`, {
+      headers: { Authorization: `Bearer ${get_Token()}` },
+    });
+
+    if (response?.data?.status == 200) {
+      return response?.data;
+    }
+    return response?.data;
+  } catch (e) {
+    return { error: e.response };
   }
 };

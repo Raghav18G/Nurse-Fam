@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { Grid, NativeSelect, Typography } from "@mui/material";
 import DashboardSearchJobsCard from "../../shared/DashboardSearchJobsCard";
 import DashboardFiltersComponent from "../../shared/DashboardFiltersComponent";
+import { getJobDetails, getLocationDetails } from "../../services";
 
 const SearchJobs = () => {
   const [searchFilters, setSearchFilters] = useState([]);
-  console.log("SEARCH FILTERS", searchFilters);
+  const [filterPayload, setFiltersPayload] = useState({
+    employee_type: "",
+    location: "",
+  });
+  const [jobDetails, setJobDetails] = useState([]);
+
+  const getData = async () => {
+    let response = await getJobDetails(filterPayload);
+    console.log("responsevanshika", response);
+    if (response) {
+      setJobDetails(response);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="SearchJobs--Container">
       <div className="SearchJobs--Top">
         <DashboardFiltersComponent
           filters={searchFilters}
           setFilters={setSearchFilters}
+          jobDetails={jobDetails}
+          setJobDetails={setJobDetails}
         />
         <Grid container>
           <Grid item xs={12} sx={{ marginTop: "1rem" }}>
@@ -55,168 +74,22 @@ const SearchJobs = () => {
       <div className="SearchJobs--Bottom">
         <Grid container>
           <Grid item xs={12}>
-            <DashboardSearchJobsCard
-              title="Nursing Staff"
-              subtitle="HCG Technology"
-              location="Bangalore, IN"
-              amount="INR 3L-6L/Year"
-              time="3 Days Ago"
-              promotedButton={true}
-              newButton={true}
-              isbookMarkEmpty={false}
-              description={
-                <p>
-                  Monitoring patient’s condition and assessing their needs to
-                  provide the best possible care. Advice, observe and
-                  interpreting their symptoms....
-                  <span
-                    style={{
-                      color: "#A52B92",
-                      cursor: "pointer",
-                      textUnderlinePosition: "under",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Read More
-                  </span>
-                </p>
-              }
-            />
-            <DashboardSearchJobsCard
-              title="Nursing Staff"
-              subtitle="HCG Technology"
-              location="Bangalore, IN"
-              amount="INR 3L-6L/Year"
-              time="3 Days Ago"
-              promotedButton={false}
-              newButton={true}
-              isbookMarkEmpty={true}
-              description={
-                <p>
-                  Monitoring patient’s condition and assessing their needs to
-                  provide the best possible care. Advice, observe and
-                  interpreting their symptoms....
-                  <span
-                    style={{
-                      color: "#A52B92",
-                      cursor: "pointer",
-                      textUnderlinePosition: "under",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Read More
-                  </span>
-                </p>
-              }
-            />
-            <DashboardSearchJobsCard
-              title="Nursing Staff"
-              subtitle="HCG Technology"
-              location="Bangalore, IN"
-              amount="INR 3L-6L/Year"
-              time="3 Days Ago"
-              promotedButton={false}
-              newButton={false}
-              isbookMarkEmpty={true}
-              description={
-                <p>
-                  Monitoring patient’s condition and assessing their needs to
-                  provide the best possible care. Advice, observe and
-                  interpreting their symptoms....
-                  <span
-                    style={{
-                      color: "#A52B92",
-                      cursor: "pointer",
-                      textUnderlinePosition: "under",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Read More
-                  </span>
-                </p>
-              }
-            />
-            <DashboardSearchJobsCard
-              title="Nursing Staff"
-              subtitle="HCG Technology"
-              location="Bangalore, IN"
-              amount="INR 3L-6L/Year"
-              time="3 Days Ago"
-              promotedButton={true}
-              newButton={true}
-              isbookMarkEmpty={false}
-              description={
-                <p>
-                  Monitoring patient’s condition and assessing their needs to
-                  provide the best possible care. Advice, observe and
-                  interpreting their symptoms....
-                  <span
-                    style={{
-                      color: "#A52B92",
-                      cursor: "pointer",
-                      textUnderlinePosition: "under",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Read More
-                  </span>
-                </p>
-              }
-            />
-            <DashboardSearchJobsCard
-              title="Nursing Staff"
-              subtitle="HCG Technology"
-              location="Bangalore, IN"
-              amount="INR 3L-6L/Year"
-              time="3 Days Ago"
-              promotedButton={false}
-              newButton={true}
-              isbookMarkEmpty={true}
-              description={
-                <p>
-                  Monitoring patient’s condition and assessing their needs to
-                  provide the best possible care. Advice, observe and
-                  interpreting their symptoms....
-                  <span
-                    style={{
-                      color: "#A52B92",
-                      cursor: "pointer",
-                      textUnderlinePosition: "under",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Read More
-                  </span>
-                </p>
-              }
-            />
-            <DashboardSearchJobsCard
-              title="Nursing Staff"
-              subtitle="HCG Technology"
-              location="Bangalore, IN"
-              amount="INR 3L-6L/Year"
-              time="3 Days Ago"
-              promotedButton={false}
-              newButton={false}
-              isbookMarkEmpty={true}
-              description={
-                <p>
-                  Monitoring patient’s condition and assessing their needs to
-                  provide the best possible care. Advice, observe and
-                  interpreting their symptoms....
-                  <span
-                    style={{
-                      color: "#A52B92",
-                      cursor: "pointer",
-                      textUnderlinePosition: "under",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Read More
-                  </span>
-                </p>
-              }
-            />
+            {jobDetails?.map((obj, index) => (
+              <>
+                <DashboardSearchJobsCard
+                  id={obj?.id}
+                  title="Nursing Staff"
+                  subtitle={"Med Fam"}
+                  location={obj?.location}
+                  amount={obj?.employee_type}
+                  time="3 Days Ago"
+                  promotedButton={true}
+                  newButton={true}
+                  isbookMarkEmpty={false}
+                  description={obj?.description}
+                />
+              </>
+            ))}
           </Grid>
         </Grid>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import copylogo from "../../image/copyLogo.svg";
 
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -23,11 +23,23 @@ import { useNavigate } from "react-router-dom";
 import facebook from "../../image/Facebook 1.svg";
 import linkedIn from "../../image/LinkedIn 1.svg";
 import whatsapp from "../../image/whatsapp 1.svg";
+import { getUserDetails } from "../../services";
 
 const ariaLabel = { "aria-label": "description" };
 
 const DashboardTab = () => {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
+  const getUserNameData = async () => {
+    const user_response = await getUserDetails();
+    console.log("USER Response", user_response);
+    if (user_response?.status == 200) {
+      setUserName(user_response?.full_name);
+    }
+  };
+  useEffect(() => {
+    getUserNameData();
+  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const [referOpen, setReferOpen] = useState(false);
@@ -97,7 +109,7 @@ const DashboardTab = () => {
             </IconButton>
           </Grid>
           <Grid item xs={4}>
-            <Typography sx={{ fontWeight: "800" }}> John Doe</Typography>
+            <Typography sx={{ fontWeight: "800" }}> {userName}</Typography>
           </Grid>
           <Grid item xs={4}>
             <Avatar alt="john" src={johnAvatar} />

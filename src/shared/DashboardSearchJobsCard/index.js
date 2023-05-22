@@ -10,6 +10,7 @@ import BookMarkEmpty from "../../image/bookmarkEmpty.svg";
 import BookMarkFilled from "../../image/bokkmarkFilled.svg";
 
 const DashboardSearchJobsCard = ({
+  id,
   title,
   subtitle,
   location,
@@ -184,7 +185,9 @@ const DashboardSearchJobsCard = ({
                         color: "#98A0A6",
                         marginTop: "0.5rem",
                         fontSize: "10px",
+                        height: "5vh",
                         marginBottom: "1rem",
+                        overflow: "scroll",
                       }}
                     >
                       {description}
