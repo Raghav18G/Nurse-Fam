@@ -3,35 +3,38 @@ import React from "react";
 import "./styles.css";
 
 import logo from "../../image/RJCARDPHOTO.svg";
-const DashboardRJCard = () => {
+
+const MyJobCard = () => {
   return (
-    <div className="DashboardRJCard--Container">
+    <div className="MyJobCard--Container">
       <Paper elevation={3} sx={{ height: "15vh", borderRadius: "20px" }}>
         <Grid container>
           <Grid item xs={2} sx={{ textAlign: "center" }}>
             <img src={logo} style={{ width: "50px", marginTop: "1rem" }} />
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={7}>
             <Grid container>
               <Grid item xs={12}>
                 <Grid container sx={{ marginTop: "1rem" }}>
-                  <Grid item xs={5}>
-                    <Typography sx={{ fontWeight: 800 }}>
+                  <Grid item xs={3}>
+                    <Typography sx={{ fontWeight: 800, fontSize: "14px" }}>
                       {" "}
                       Nursing Staff
                     </Typography>
                   </Grid>
-                  <Grid item xs={4} sx={{ textAlign: "right" }}>
+                  <Grid item xs={3} sx={{ textAlign: "right" }}>
                     {" "}
                     <Button
                       variant="outlined"
                       sx={{
                         height: "1.2rem",
                         textDecoration: "none",
-                        fontSize: "10px",
+                        fontSize: "6.8px",
+                        background: "#341950",
+                        color: "#fff",
                       }}
                     >
-                      Trending
+                      Applied
                     </Button>
                   </Grid>
                   <Grid item xs={3}>
@@ -41,11 +44,25 @@ const DashboardRJCard = () => {
                       sx={{
                         height: "1.2rem",
                         textDecoration: "none",
-                        fontSize: "10px",
+                        fontSize: "6.8px",
                         marginLeft: "10px",
                       }}
                     >
-                      New
+                      Move to Saved
+                    </Button>
+                  </Grid>
+                  <Grid item xs={3}>
+                    {" "}
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        height: "1.2rem",
+                        textDecoration: "none",
+                        fontSize: "6.7px",
+                        marginLeft: "5px",
+                      }}
+                    >
+                      Company Profile
                     </Button>
                   </Grid>
                 </Grid>
@@ -59,7 +76,7 @@ const DashboardRJCard = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={5} sx={{ textAlign: "end", padding: "1rem" }}>
+          <Grid item xs={3} sx={{ textAlign: "end", padding: "1rem" }}>
             <Grid container>
               <Grid item xs={12}>
                 <Typography sx={{ color: "#542A68", fontWeight: 800 }}>
@@ -79,4 +96,4 @@ const DashboardRJCard = () => {
   );
 };
 
-export default DashboardRJCard;
+export default MyJobCard;

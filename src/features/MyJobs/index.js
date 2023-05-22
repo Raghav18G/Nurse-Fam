@@ -1,7 +1,12 @@
 import React from "react";
+import MyJobCard from "../../shared/MyJobCard";
 
 const MyJobs = () => {
-  return <div>MyJobs</div>;
+  return (
+    <div>
+      <MyJobCard />
+    </div>
+  );
 };
 
 export default MyJobs;
