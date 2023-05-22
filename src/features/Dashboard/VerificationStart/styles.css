@@ -1,0 +1,21 @@
+.checkBoxGroup {
+  display: flex;
+  margin-left: 2rem;
+}
+.checkBoxGroup-content {
+  display: flex;
+  margin: 5px;
+  text-align: start !important;
+}
+
+.checkBoxGroup-content .MuiTypography-root {
+  font-size: small;
+  color: #341950;
+  font-weight: 500;
+  margin: 0px 5px 0px 5px;
+}
+.offerCard {
+  background-color: #f0f2f9;
+  margin-left: 15%;
+  margin-right: 15%;
+}
