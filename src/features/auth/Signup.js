@@ -29,6 +29,13 @@ const ariaLabel = { "aria-label": "description" };
 const Signup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [otp, setOtp] = useState("");
+  const [signupInfo, setSignupInfo] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
   const [verifyOpen, setVerifyOpen] = useState(false);
@@ -51,6 +58,16 @@ const Signup = () => {
   const handleSignInClick = () => {
     navigate("/login");
   };
+  const handleInfoChange = (e) => {
+    console.log("handleInfoChange CHANGED");
+
+    const { name, value } = e.target;
+
+    setSignupInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
   return (
     <SignupLayout>
       <div className="signupContainer">
@@ -69,6 +86,8 @@ const Signup = () => {
               id="standard-basic"
               label="First Name"
               variant="standard"
+              name="first_name"
+              onChange={handleInfoChange}
               sx={{ marginTop: "0.5rem" }}
             />
             <TextField
@@ -76,6 +95,8 @@ const Signup = () => {
               id="standard-basic"
               label="Last Name"
               variant="standard"
+              name="last_name"
+              onChange={handleInfoChange}
               sx={{ marginTop: "0.5rem", marginLeft: "1rem" }}
             />
           </div>
@@ -83,12 +104,16 @@ const Signup = () => {
           <TextField
             id="standard-basic"
             label="Email"
+            name="email"
+            onChange={handleInfoChange}
             variant="standard"
             sx={{ marginTop: "0.5rem" }}
           />
           <TextField
             id="standard-basic"
             label="Password"
+            name="password"
+            onChange={handleInfoChange}
             variant="standard"
             type={showPassword ? "text" : "password"}
             sx={{ marginTop: "0.5rem" }}

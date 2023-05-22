@@ -1,5 +1,6 @@
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import {
+  Button,
   Grid,
   IconButton,
   InputAdornment,
@@ -14,11 +15,26 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
+import { Controller, useForm } from "react-hook-form";
 const UDGeneralInfo = () => {
+  const {
+    register,
+    reset,
+    formState: { errors },
+    setValue,
+    getValues,
+    control,
+    handleSubmit,
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+  };
+
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Grid
         container
         spacing={2}
@@ -54,6 +70,7 @@ const UDGeneralInfo = () => {
                 sx={{ backgroundColor: "#fff" }}
                 size="small"
                 fullWidth
+                {...register("full_name")}
               />
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
@@ -66,10 +83,11 @@ const UDGeneralInfo = () => {
                 size="small"
                 placeholder="DD/MM/YYYY"
                 InputProps={{ min: new Date().toISOString().slice(0, 16) }}
+                {...register("dob")}
               />
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
-              <FormControl>
+              <FormControl {...register("gender")}>
                 <FormLabel id="demo-radio-buttons-group-label">
                   Gender
                 </FormLabel>
@@ -118,6 +136,7 @@ const UDGeneralInfo = () => {
                 sx={{ backgroundColor: "#fff" }}
                 size="small"
                 fullWidth
+                {...register("phone")}
               />
             </Grid>
             <Grid item xs={6}>
@@ -126,6 +145,7 @@ const UDGeneralInfo = () => {
                 sx={{ backgroundColor: "#fff" }}
                 size="small"
                 fullWidth
+                {...register("email")}
               />
             </Grid>
           </Grid>
@@ -147,6 +167,7 @@ const UDGeneralInfo = () => {
                 sx={{ backgroundColor: "#fff" }}
                 size="small"
                 fullWidth
+                {...register("house_number")}
               />
             </Grid>
             <Grid item xs={6}>
@@ -155,6 +176,7 @@ const UDGeneralInfo = () => {
                 sx={{ backgroundColor: "#fff" }}
                 size="small"
                 fullWidth
+                {...register("landmark")}
               />
             </Grid>
             <Grid item xs={12} sx={{ marginTop: "1rem" }}>
@@ -163,6 +185,7 @@ const UDGeneralInfo = () => {
                 size="small"
                 placeholder="Street 1*"
                 fullWidth
+                {...register("street_1")}
               />
             </Grid>
             <Grid item xs={12} sx={{ marginTop: "1rem" }}>
@@ -171,24 +194,44 @@ const UDGeneralInfo = () => {
                 size="small"
                 placeholder="Street 2"
                 fullWidth
+                {...register("street_2")}
               />
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem", paddingRight: "10px" }}>
               <InputLabel>City*</InputLabel>
-              <Select sx={{ backgroundColor: "#fff" }} size="small" fullWidth>
-                <MenuItem value={1}>option 1</MenuItem>
+              <Select
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+                {...register("city")}
+              >
+                <MenuItem value="Bengaluru">Bengaluru</MenuItem>
+                <MenuItem value="Delhi NCR">Delhi NCR</MenuItem>
+                <MenuItem value="Mumbai">Mumbai</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
               <InputLabel>State/Province*</InputLabel>
-              <Select sx={{ backgroundColor: "#fff" }} size="small" fullWidth>
-                <MenuItem value={1}>option 1</MenuItem>
+              <Select
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+                {...register("state")}
+              >
+                <MenuItem value="Karnataka">Karnataka</MenuItem>
+                <MenuItem value="Delhi NCR">Delhi NCR</MenuItem>
+                <MenuItem value="Maharashtra">Maharashtra</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem", paddingRight: "10px" }}>
               <InputLabel>Country*</InputLabel>
-              <Select sx={{ backgroundColor: "#fff" }} size="small" fullWidth>
-                <MenuItem value={1}>option 1</MenuItem>
+              <Select
+                sx={{ backgroundColor: "#fff" }}
+                size="small"
+                fullWidth
+                {...register("country")}
+              >
+                <MenuItem value="india">India</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={6} sx={{ marginTop: "1rem" }}>
@@ -197,6 +240,7 @@ const UDGeneralInfo = () => {
                 sx={{ backgroundColor: "#fff" }}
                 size="small"
                 fullWidth
+                {...register("zip_code")}
               />
             </Grid>
           </Grid>
@@ -231,6 +275,7 @@ const UDGeneralInfo = () => {
                     </InputAdornment>
                   ),
                 }}
+                {...register("file")}
               />
             </Grid>
             <Grid item xs={6}>
@@ -239,8 +284,9 @@ const UDGeneralInfo = () => {
                 size="small"
                 placeholder="Choose Avatar"
                 fullWidth
+                {...register("avatar")}
               >
-                <MenuItem value={1}>option 1</MenuItem>
+                <MenuItem value={1}>avatar 1</MenuItem>
               </Select>
             </Grid>
           </Grid>
@@ -264,12 +310,18 @@ const UDGeneralInfo = () => {
                 fullWidth
                 multiline
                 rows={4}
+                {...register("bio")}
               />
             </Grid>
           </Grid>
         </Grid>
+        <div styles={{ display: "flex", justifyContent: "flex-end" }}>
+          <Button type="submit" variant="contained">
+            Save
+          </Button>
+        </div>
       </Grid>
-    </>
+    </form>
   );
 };
 
