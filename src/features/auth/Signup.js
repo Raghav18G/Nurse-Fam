@@ -59,21 +59,39 @@ const Signup = () => {
           <div className="signupContainer--left--bottom"></div>
         </div>
         <div className="signupContainer--right">
-          <Typography variant="h4" sx={{ color: "#A52B92", fontWeight: "800" }}>
+          <Typography variant="h5" sx={{ color: "#A52B92", fontWeight: "800" }}>
             Create Account
           </Typography>
+
+          <div style={{ display: "flex" }}>
+            <TextField
+              fullWidth
+              id="standard-basic"
+              label="First Name"
+              variant="standard"
+              sx={{ marginTop: "0.5rem" }}
+            />
+            <TextField
+              fullWidth
+              id="standard-basic"
+              label="Last Name"
+              variant="standard"
+              sx={{ marginTop: "0.5rem", marginLeft: "1rem" }}
+            />
+          </div>
+
           <TextField
             id="standard-basic"
             label="Email"
             variant="standard"
-            sx={{ marginTop: "1rem" }}
+            sx={{ marginTop: "0.5rem" }}
           />
           <TextField
             id="standard-basic"
             label="Password"
             variant="standard"
             type={showPassword ? "text" : "password"}
-            sx={{ marginTop: "1rem" }}
+            sx={{ marginTop: "0.5rem" }}
             InputProps={{
               // <-- This is where the toggle button is added.
               endAdornment: (
@@ -94,7 +112,7 @@ const Signup = () => {
             label="Confirm Password"
             variant="standard"
             type={showPasswordConfirm ? "text" : "password"}
-            sx={{ marginTop: "1rem" }}
+            sx={{ marginTop: "0.5rem" }}
             InputProps={{
               // <-- This is where the toggle button is added.
               endAdornment: (
@@ -155,7 +173,7 @@ const Signup = () => {
                 backgroundColor: "#fff !important",
               }}
             >
-              <img src={Google} style={{ width: "50px" }} />
+              <img src={Google} style={{ width: "32px" }} />
             </Button>
             <Button
               elevation={3}
@@ -166,7 +184,7 @@ const Signup = () => {
                 backgroundColor: "#fff !important",
               }}
             >
-              <img src={Facebook} style={{ width: "40px", padding: "px" }} />
+              <img src={Facebook} style={{ width: "26px" }} />
             </Button>
             <Button
               elevation={3}
@@ -177,7 +195,7 @@ const Signup = () => {
                 backgroundColor: "#fff !important",
               }}
             >
-              <img src={Linkedin} style={{ width: "40px", padding: "3px" }} />
+              <img src={Linkedin} style={{ width: "26px", padding: "3px" }} />
             </Button>
             <Button
               elevation={3}
@@ -189,7 +207,14 @@ const Signup = () => {
                 backgroundColor: "#fff !important",
               }}
             >
-              <img src={OTP} style={{ width: "60px", padding: "12px" }} />
+              <img
+                src={OTP}
+                style={{
+                  width: "30px",
+                  paddingTop: "8px",
+                  paddingBottom: "8px",
+                }}
+              />
             </Button>
           </div>
 

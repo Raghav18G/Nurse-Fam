@@ -44,7 +44,7 @@ const MyJobCard = () => {
                       sx={{
                         height: "1.2rem",
                         textDecoration: "none",
-                        fontSize: "6.8px",
+                        fontSize: "6px",
                         marginLeft: "10px",
                       }}
                     >
@@ -58,7 +58,7 @@ const MyJobCard = () => {
                       sx={{
                         height: "1.2rem",
                         textDecoration: "none",
-                        fontSize: "6.7px",
+                        fontSize: "5.5px",
                         marginLeft: "5px",
                       }}
                     >
