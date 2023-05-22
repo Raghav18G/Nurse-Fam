@@ -87,6 +87,7 @@ const SearchJobs = () => {
                   newButton={true}
                   isbookMarkEmpty={false}
                   description={obj?.description}
+                  
                 />
               </>
             ))}

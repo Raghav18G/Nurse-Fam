@@ -8,7 +8,8 @@ import clock from "../../image/clock.svg";
 
 import BookMarkEmpty from "../../image/bookmarkEmpty.svg";
 import BookMarkFilled from "../../image/bokkmarkFilled.svg";
-
+import { applyJob } from "../../services";
+import { toast } from "react-toastify";
 const DashboardSearchJobsCard = ({
   id,
   title,
@@ -21,6 +22,17 @@ const DashboardSearchJobsCard = ({
   description,
   isbookMarkEmpty = true,
 }) => {
+  const handleApply = async () => {
+    const response = await applyJob({ jobid: id });
+
+    if (response?.status == 200) {
+      console.log("APPLIED");
+      toast.success("Job Applied Successfully", {
+        position: "top-right",
+      });
+    }
+  };
+
   return (
     <div className="DBSearchJobsCard--Container">
       <Paper
@@ -218,6 +230,7 @@ const DashboardSearchJobsCard = ({
                     <Button
                       variant="contained"
                       sx={{ backgroundColor: "green", marginTop: "0.5rem" }}
+                      onClick={handleApply}
                     >
                       Apply
                     </Button>

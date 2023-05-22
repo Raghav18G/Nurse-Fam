@@ -268,3 +268,29 @@ export const getRefrralViaMail = async (payload) => {
     return { error: e.response.data };
   }
 };
+
+//APPLY JOB
+
+export const applyJob = async (payload) => {
+  try {
+    const response = await axiosInstance.post("/nurse/jobapply/", payload, {
+      headers: { Authorization: `Bearer ${get_Token()}` },
+    });
+    console.log("Response of JOB AAPLY API", response);
+    return response;
+  } catch (e) {
+    return { error: e.response };
+  }
+};
+
+export const getAppliedJobs = async (payload) => {
+  try {
+    const response = await axiosInstance.get(`/nurse/sh`, {
+      headers: { Authorization: `Bearer ${get_Token()}` },
+    });
+
+    return response;
+  } catch (e) {
+    return { error: e.response };
+  }
+};

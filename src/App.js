@@ -25,45 +25,51 @@ import VerificationStart from "./features/Dashboard/VerificationStart";
 import VerificationProgress from "./features/Dashboard/VerificationProgress";
 import VerificationSuccess from "./features/Dashboard/VerificationSuccess";
 import PrivateOutlet from "./PrivateRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <Routes>
-      <Route path={"/"} element={<PrivateOutlet />}>
-        <Route element={<SidebarLayout />}>
-          {/* Dashboard Routes */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route
-            path="/dashboard/verificationStart"
-            element={<VerificationStart />}
-          />
-          <Route
-            path="/dashboard/verificationProgress"
-            element={<VerificationProgress />}
-          />
-          <Route
-            path="/dashboard/verificationSuccess"
-            element={<VerificationSuccess />}
-          />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/searchJobs" element={<SearchJobs />} />
-          <Route path="/myJobs" element={<MyJobs />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/activities" element={<Activities />} />
+    <>
+      <Routes>
+        <Route path={"/"} element={<PrivateOutlet />}>
+          <Route element={<SidebarLayout />}>
+            {/* Dashboard Routes */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard/verificationStart"
+              element={<VerificationStart />}
+            />
+            <Route
+              path="/dashboard/verificationProgress"
+              element={<VerificationProgress />}
+            />
+            <Route
+              path="/dashboard/verificationSuccess"
+              element={<VerificationSuccess />}
+            />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/searchJobs" element={<SearchJobs />} />
+            <Route path="/myJobs" element={<MyJobs />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/activities" element={<Activities />} />
+          </Route>
         </Route>
-      </Route>
 
-      <Route exact index path="/landing" element={<Landing />} />
-      <Route exact path="/signup" element={<Signup />} />
-      <Route exact path="/userDetails" element={<UDLanding />} />
-      <Route exact path="/userDetails/info" element={<UDLayout />} />
-      <Route exact path="/login" element={<Signin />} />
-      <Route exact path="/plans" element={<UDProfilePricing />} />
-      <Route exact path="/paysuccess" element={<UDPaymentSuccess />} />
+        <Route exact index path="/landing" element={<Landing />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/userDetails" element={<UDLanding />} />
+        <Route exact path="/userDetails/info" element={<UDLayout />} />
+        <Route exact path="/login" element={<Signin />} />
+        <Route exact path="/plans" element={<UDProfilePricing />} />
+        <Route exact path="/paysuccess" element={<UDPaymentSuccess />} />
 
-      {/* PORTFOLIO */}
-      <Route exact path="/components" element={<Sample />} />
-    </Routes>
+        {/* PORTFOLIO */}
+        <Route exact path="/components" element={<Sample />} />
+      </Routes>
+
+      <ToastContainer />
+    </>
   );
 }
 

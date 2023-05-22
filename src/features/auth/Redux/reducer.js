@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import initialState from "./state";
 import { login, logout, signup } from "./actionCreator";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -14,10 +15,17 @@ export const authSlice = createSlice({
     });
     builder.addCase(login.fulfilled, (state, action) => {
       console.log("TID In REDUCER", action?.payload);
-      state.t_id = action?.payload?.data?.refresh;
+      state.t_id = action?.payload?.data?.access;
       state.loading = false;
       if (action?.payload?.data?.status != 200) {
         state.error = action?.payload?.data?.message;
+        toast.error(action?.payload?.data?.message, {
+          position: "top-right",
+        });
+      } else {
+        toast.success(action?.payload?.data?.message, {
+          position: "top-right",
+        });
       }
     });
     builder.addCase(login.rejected, (state, action) => {
