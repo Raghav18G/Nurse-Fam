@@ -80,17 +80,16 @@ const Dashboard = () => {
               header="My Jobs"
               text="0 Applied For"
               footerText="Apply Here"
-              handleClick={handleCardClick}
+              // handleClick={handleCardClick}
             />
           </Grid>
           <Grid item xs={4}>
             <DashboardCard
               white
-              header="My Profile"
-              text="80% Completed"
-              subtext="Verification Pending*"
-              footerText="Complete Now"
-              handleClick={handleCardClick}
+              header="Invites"
+              text="16 New Requests"
+              footerText="All Invites"
+              // handleClick={handleCardClick}
             />
           </Grid>
         </Grid>
