@@ -63,6 +63,70 @@ export const setGeneralInformation = async (payload) => {
     return { error: e.response.data };
   }
 };
+//eduction details
+
+export const setEducationDetails = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/nurse/education-details/",
+      payload,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+//experience details
+
+export const setExperienceDetails = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/nurse/experience-details/",
+      payload,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+//license details
+
+export const setLicenseDetails = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/nurse/licenses-details/",
+      payload,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+//job preferences nurse details
+
+export const setJobPreferences = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/nurse/nurse-details/",
+      payload,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
 
 //  nurse complete
 export const getNurseCompletion = async (payload) => {
