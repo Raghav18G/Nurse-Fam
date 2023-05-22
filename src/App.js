@@ -1,10 +1,7 @@
 import React from "react";
 
 import { Route, Routes } from "react-router-dom";
-import { adminRoleGetterService } from "./shared/services";
 
-import PrivateRoute from "./features/routes/PrivateRoute";
-import PublicRoute from "./features/routes/PublicRoute";
 import SidebarLayout from "./features/side-bar/SidebarLayout";
 
 import "./App.css";
@@ -29,8 +26,6 @@ import VerificationProgress from "./features/Dashboard/VerificationProgress";
 import VerificationSuccess from "./features/Dashboard/VerificationSuccess";
 
 function App() {
-  const admin_role = adminRoleGetterService();
-  const permitAdmin = admin_role === "Super" ? true : false;
   return (
     <Routes>
       <Route element={<SidebarLayout />}>

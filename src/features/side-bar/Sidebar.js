@@ -14,18 +14,8 @@ import { useNavigate } from "react-router-dom";
 import options from "./options";
 import "./style.css";
 import logo from "../../image/Sidebar/SidebarLogo.png";
-import admin from "../../image/admin.png";
+
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import {
-  adminInfoRemovalService,
-  adminRoleRemovalService,
-  adminNameRemovalService,
-  adminNameGetterService,
-  adminIdRemovalService,
-  adminRoleGetterService,
-} from "../../shared/services";
-import { useSelector } from "react-redux";
-import authSlice from "../auth/auth.slice";
 
 const Sidebar = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -34,22 +24,12 @@ const Sidebar = () => {
   const [expanded, setExpanded] = useState([]);
   const [active, setActive] = useState(0);
 
-  const user_name = adminNameGetterService();
-  const user_role = adminRoleGetterService();
-  const sidebarAccessToSuperAdmin = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const sidebarAccessToSubAdmin = [1, 2, 3, 4, 9, 10];
-
   const handleNodeSelect = (event, nodeId) => {
     setExpanded([nodeId]);
   };
 
   const handleLogout = async () => {
-    // adminInfoRemovalService();
-    // adminRoleRemovalService();
-    // adminNameRemovalService();
-    // adminIdRemovalService();
     navigate("/");
-    // }
   };
 
   const renderFolder = (folder) => {
@@ -61,10 +41,7 @@ const Sidebar = () => {
               <div
                 style={{
                   backgroundColor: active === idx ? "#111" : "#fff",
-                  display:
-                    item.accessibleToAll === false &&
-                    user_role !== "Super" &&
-                    "none",
+                  display: item.accessibleToAll === false,
                 }}
                 onClick={() => {
                   setActive(idx);

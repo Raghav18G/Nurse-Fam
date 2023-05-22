@@ -5,26 +5,11 @@ import { AppBar, Button, Grid, Paper, Toolbar } from "@mui/material";
 
 import Sidebar from "./Sidebar";
 
-import {
-  adminInfoRemovalService,
-  adminLogoutService,
-  adminRoleRemovalService,
-} from "../../shared/services";
-
 import "./style.css";
 import DashboardTab from "../../shared/DashboardTab";
 
 const SidebarLayout = () => {
   const navigate = useNavigate();
-
-  // const handleLogout = async () => {
-  //   // const { isSuccess } = await adminLogoutService();
-  //   // if (isSuccess) {
-  //   adminInfoRemovalService();
-  //   adminRoleRemovalService();
-  //   navigate("/");
-  //   // }
-  // };
 
   return (
     <Grid container className="main-container">
