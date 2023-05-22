@@ -16,10 +16,13 @@ import "./style.css";
 import logo from "../../image/Sidebar/SidebarLogo.png";
 
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import { logout } from "../auth/Redux/actionCreator";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [expanded, setExpanded] = useState([]);
   const [active, setActive] = useState(0);
@@ -29,7 +32,8 @@ const Sidebar = () => {
   };
 
   const handleLogout = async () => {
-    navigate("/");
+    dispatch(logout());
+    navigate("/landing");
   };
 
   const renderFolder = (folder) => {

@@ -24,33 +24,36 @@ import Activities from "./features/Activities";
 import VerificationStart from "./features/Dashboard/VerificationStart";
 import VerificationProgress from "./features/Dashboard/VerificationProgress";
 import VerificationSuccess from "./features/Dashboard/VerificationSuccess";
+import PrivateOutlet from "./PrivateRoute";
 
 function App() {
   return (
     <Routes>
-      <Route element={<SidebarLayout />}>
-        {/* Dashboard Routes */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route
-          path="/dashboard/verificationStart"
-          element={<VerificationStart />}
-        />
-        <Route
-          path="/dashboard/verificationProgress"
-          element={<VerificationProgress />}
-        />
-        <Route
-          path="/dashboard/verificationSuccess"
-          element={<VerificationSuccess />}
-        />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/searchJobs" element={<SearchJobs />} />
-        <Route path="/myJobs" element={<MyJobs />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/activities" element={<Activities />} />
+      <Route path={"/"} element={<PrivateOutlet />}>
+        <Route element={<SidebarLayout />}>
+          {/* Dashboard Routes */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard/verificationStart"
+            element={<VerificationStart />}
+          />
+          <Route
+            path="/dashboard/verificationProgress"
+            element={<VerificationProgress />}
+          />
+          <Route
+            path="/dashboard/verificationSuccess"
+            element={<VerificationSuccess />}
+          />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/searchJobs" element={<SearchJobs />} />
+          <Route path="/myJobs" element={<MyJobs />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/activities" element={<Activities />} />
+        </Route>
       </Route>
 
-      <Route exact path="/" element={<Landing />} />
+      <Route exact index path="/landing" element={<Landing />} />
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/userDetails" element={<UDLanding />} />
       <Route exact path="/userDetails/info" element={<UDLayout />} />
