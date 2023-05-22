@@ -120,7 +120,7 @@ const DashboardTab = () => {
             <Typography sx={{ fontWeight: "800" }}> John Doe</Typography>
           </Grid>
           <Grid item xs={4}>
-            <Avatar alt="john" src={johnAvatar} />
+            <Avatar sx={{ bgcolor: "#341950" }} />
           </Grid>
           <Grid item xs={6}>
             <Tooltip
