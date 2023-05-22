@@ -33,11 +33,11 @@ const DashboardTab = () => {
   const [referOpen, setReferOpen] = useState(false);
 
   const handleDialogOpen = () => {
-    setReferOpen(true);
+    setIsOpen(true);
   };
   const handleEmailOpen = () => {
-    setReferOpen(false);
-    setIsOpen(true);
+    setIsOpen(false);
+    setReferOpen(true);
   };
 
   const content = (
@@ -167,7 +167,9 @@ const DashboardTab = () => {
         title="Enter Email"
         subtitle="Enter the email id to share
           your referral code"
-        handleClose={handleEmailOpen}
+        handleClose={() => {
+          setReferOpen(false);
+        }}
         btnLabel="Share"
       >
         <div style={{ display: "flex", alignItems: "center", margin: "20px" }}>
@@ -181,9 +183,7 @@ const DashboardTab = () => {
         title="Referral Link Generated"
         subtitle="Share your code by simply clicking the
           link below earn a reward"
-        handleClose={() => {
-          setIsOpen(false);
-        }}
+        handleClose={handleEmailOpen}
         btnLabel="Share Link via Mail"
         footerText={true}
         footerTextContent={
