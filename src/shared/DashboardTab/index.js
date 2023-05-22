@@ -5,19 +5,21 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import {
   Avatar,
   Button,
+  Divider,
   Grid,
   IconButton,
+  Input,
   InputAdornment,
   TextField,
-  Input,
-  Typography,
   Tooltip,
+  Typography,
 } from "@mui/material";
 import johnAvatar from "../../image/JohnAvatar.svg";
 import ReusableDialog from "../Dialog/ResusableDialog";
 import RightTabList from "./TabList";
 import "./styles.css";
 
+import { useNavigate } from "react-router-dom";
 import facebook from "../../image/Facebook 1.svg";
 import linkedIn from "../../image/LinkedIn 1.svg";
 import whatsapp from "../../image/whatsapp 1.svg";
@@ -25,8 +27,11 @@ import whatsapp from "../../image/whatsapp 1.svg";
 const ariaLabel = { "aria-label": "description" };
 
 const DashboardTab = () => {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
   const [referOpen, setReferOpen] = useState(false);
+
   const handleDialogOpen = () => {
     setReferOpen(true);
   };
@@ -36,9 +41,40 @@ const DashboardTab = () => {
   };
 
   const content = (
-    <div>
-      <h2> HELLO</h2>
-      <Button>OO bete</Button>
+    <div style={{ backgroundColor: "#341950", padding: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "2px",
+        }}
+      >
+        <Typography variant="h6">Get Verified</Typography>
+        <Typography variant="h6">x</Typography>
+      </div>
+      <Divider style={{ border: "1px solid #fff" }} />
+      <Typography sx={{ fontSize: "13px", marginTop: "1rem" }}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat
+        dolor et ante tempus eleifend. Sed auctor consequat dapibus. Aliquam
+        scelerisque tristique euismod.
+      </Typography>
+      <span
+        onClick={() => {
+          navigate("/dashboard/verificationStart");
+        }}
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          fontSize: "15px",
+          color: "#fff",
+          cursor: "pointer",
+          textUnderlinePosition: "under",
+          textDecoration: "underline",
+          marginTop: "1.5rem",
+        }}
+      >
+        Verify Now
+      </span>
     </div>
   );
   return (
@@ -67,7 +103,13 @@ const DashboardTab = () => {
             <Avatar alt="john" src={johnAvatar} />
           </Grid>
           <Grid item xs={6}>
-            <Tooltip title={content} enterDelay={500} leaveDelay={200}>
+            <Tooltip
+              title={content}
+              placement="bottom-start"
+              enterDelay={500}
+              leaveDelay={200}
+              arrow
+            >
               <Button
                 variant="outlined"
                 // fullWidth
