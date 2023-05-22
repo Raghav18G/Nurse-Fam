@@ -6,7 +6,7 @@ import { ThemeProvider } from "@mui/material";
 import { Provider } from "react-redux";
 import App from "./App";
 
-import store from "./shared/store";
+import { store } from "./Redux/store";
 import { theme } from "./shared/theme";
 import ErrorBoundary from "./shared/ErrorBoundry";
 
@@ -24,4 +24,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
