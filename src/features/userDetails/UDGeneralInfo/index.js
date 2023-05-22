@@ -18,8 +18,15 @@ import RadioGroup from "@mui/material/RadioGroup";
 import React, { useState } from "react";
 import "./styles.css";
 import { Controller, useForm } from "react-hook-form";
-import { setGeneralInformation } from "../../../services";
+import { getUserDetails, setGeneralInformation } from "../../../services";
+
 const UDGeneralInfo = () => {
+  //GET PREFILL DATA
+  const getData = async () => {
+    let response = await getUserDetails();
+    return response;
+  };
+
   const {
     register,
     reset,
@@ -28,7 +35,9 @@ const UDGeneralInfo = () => {
     getValues,
     control,
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: () => getData(),
+  });
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -318,11 +327,11 @@ const UDGeneralInfo = () => {
             </Grid>
           </Grid>
         </Grid>
-        <div styles={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button type="submit" variant="contained">
+        <Grid item xs={12} sx={{ marginTop: "1rem", textAlign: "end" }}>
+          <Button type="submit" variant="contained" sx={{ width: "8rem" }}>
             Save
           </Button>
-        </div>
+        </Grid>
       </Grid>
     </form>
   );

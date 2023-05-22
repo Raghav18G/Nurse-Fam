@@ -1,0 +1,10 @@
+
+
+.QualificationsContainer .MuiButton-contained {
+    background-color: #341950 !important;
+    font-weight: 800 !important;
+  }
+  
+  .QualificationsContainer  .MuiInputBase-input{
+    font-weight: 800 !important;
+  }

@@ -53,7 +53,7 @@ export const GetConnections = async (payload) => {
   }
 };
 
-//general information
+//General information
 
 export const setGeneralInformation = async (payload) => {
   try {
@@ -61,6 +61,41 @@ export const setGeneralInformation = async (payload) => {
       headers: { Authorization: `Bearer ${get_Token()}` },
     });
     console.log("Response of setGeneralInformation API", response);
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+
+//UserDetails
+
+export const getUserDetails = async (payload) => {
+  try {
+    const response = await axiosInstance.get(`/userdetails/`, {
+      headers: { Authorization: `Bearer ${get_Token()}` },
+    });
+
+    if (response?.data?.status == 200) {
+      return response?.data;
+    }
+    return response?.data;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+
+//Verifications
+
+export const verificationService = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/nurse/verifyaccount/",
+      payload,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+    console.log("Response of Verification API", response);
     return response;
   } catch (e) {
     return { error: e.response.data };

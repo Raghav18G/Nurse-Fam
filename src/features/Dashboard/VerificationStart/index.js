@@ -6,15 +6,41 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import verifiedRightArrow from "../../../image/verifiedRightArrow.svg";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import tick from "../../../image/CheckboxTick.svg";
+import { verificationService } from "../../../services";
 const VerificationStart = () => {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate(-1);
+  };
+  const [verificationsCredentials, setCredentials] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    ph: "",
+  });
+
+  const handleCredsChange = (e) => {
+    console.log("CREDS CHANGED");
+    const { name, value } = e.target;
+    setCredentials((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    console.log("PAYLOAD", verificationsCredentials);
+    const response = await verificationService(verificationsCredentials);
+    console.log("Response", response);
+
+    if (response?.data?.status == 200) {
+      navigate("/dashboard/verificationProgress");
+    }
   };
   return (
     <Grid
@@ -130,52 +156,61 @@ const VerificationStart = () => {
                   <TextField
                     fullWidth
                     size="small"
+                    onChange={handleCredsChange}
+                    name="first_name"
+                    placeholder="First Name"
                     sx={{
                       backgroundColor: "#fff",
                       border: "1px solid #666F80",
                       borderRadius: "10px",
                       width: "70%",
                     }}
-                    value="John"
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
                     fullWidth
                     size="small"
+                    onChange={handleCredsChange}
+                    name="last_name"
+                    placeholder="Last Name"
                     sx={{
                       backgroundColor: "#fff",
                       border: "1px solid #666F80",
                       borderRadius: "10px",
                       width: "70%",
                     }}
-                    value="Doe"
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
                     fullWidth
                     size="small"
+                    name="email"
+                    onChange={handleCredsChange}
+                    placeholder="Email"
                     sx={{
                       backgroundColor: "#fff",
                       border: "1px solid #666F80",
                       borderRadius: "10px",
                       width: "70%",
                     }}
-                    value="JohnDoe@gmail.com"
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
                     fullWidth
                     size="small"
+                    name="ph"
+                    placeholder="Phone number"
+                    type="tel"
+                    onChange={handleCredsChange}
                     sx={{
                       backgroundColor: "#fff",
                       border: "1px solid #666F80",
                       borderRadius: "10px",
                       width: "70%",
                     }}
-                    value="+91 1234567890"
                   />
                 </Grid>
               </Grid>
@@ -190,9 +225,7 @@ const VerificationStart = () => {
                   backgroundColor: "#341950 !important",
                   borderRadius: "10px",
                 }}
-                onClick={() => {
-                  navigate("/dashboard/verificationProgress");
-                }}
+                onClick={handleSubmit}
               >
                 Submit
               </Button>

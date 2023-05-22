@@ -7,3 +7,12 @@
 .info-root-container .MuiInputLabel-root {
   margin-bottom: 4px !important;
 }
+
+.info-root-container  .MuiButton-contained {
+  background-color: #341950 !important;
+  font-weight: 800 !important;
+}
+
+.info-root-container  .MuiInputBase-input{
+  font-weight: 800 !important;
+}
