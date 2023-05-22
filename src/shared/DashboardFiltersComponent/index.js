@@ -114,7 +114,7 @@ const DashboardFiltersComponent = ({ filters, setFilters }) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} sx={{ marginTop: "1rem" }}>
+        <Grid item xs={12} sx={{ marginTop: "0.5rem" }}>
           <Grid container>
             <Grid item xs={8}>
               {filters.map((item) => (
@@ -132,12 +132,16 @@ const DashboardFiltersComponent = ({ filters, setFilters }) => {
                 </Paper>
               ))}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} sx={{ marginTop: "0.5rem" }}>
               <Grid container>
-                <Grid item xs={8}>
+                <Grid item xs={7}>
                   <Button variant="contained">Apply Filters</Button>
                 </Grid>
-                <Grid item xs={4} sx={{ textAlign: "center" }}>
+                <Grid
+                  item
+                  xs={5}
+                  sx={{ textAlign: "center", paddingTop: "1rem" }}
+                >
                   <span
                     onClick={handleClear}
                     style={{
