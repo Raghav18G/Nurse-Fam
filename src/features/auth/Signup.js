@@ -136,6 +136,7 @@ const Signup = () => {
           </FormGroup>
           <Button
             variant="contained"
+            onClick={handleDialogOpen}
             sx={{ backgroundColor: "#341950 !important", marginTop: "1rem" }}
           >
             Sign up
@@ -200,7 +201,6 @@ const Signup = () => {
             <Button
               elevation={3}
               variant="contained"
-              onClick={handleDialogOpen}
               sx={{
                 marginRight: "2rem",
                 cursor: "pointer",
@@ -260,6 +260,7 @@ const Signup = () => {
           subtitle="We have sent code to your on your number +91 98*******1"
           handleClose={() => {
             setVerifyOpen(false);
+            navigate("/login");
           }}
           btnLabel="Verify"
           footerText={true}

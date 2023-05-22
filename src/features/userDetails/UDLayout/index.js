@@ -138,20 +138,22 @@ const UDLayout = () => {
       <div className="UDLayout--Bottom">
         <div className="UDLayout--Bottom-left">{UDComponents[activeStep]}</div>
         <div className="UDLayout--Bottom-right">
-          <Button
-            variant="contained"
-            sx={{ width: "12rem" }}
-            onClick={handleContinue}
-          >
-            {" "}
-            Continue
-          </Button>
+          {activeStep < 2 && activeStep >= 0 && (
+            <Button
+              variant="contained"
+              sx={{ width: "12rem" }}
+              onClick={handleContinue}
+            >
+              {" "}
+              Continue
+            </Button>
+          )}
           <Button
             variant="outlined"
             sx={{ width: "12rem", marginTop: "1rem" }}
             onClick={() => {
               if (activeStep == 2) {
-                navigate("/plans");
+                navigate("/dashboard");
               }
             }}
           >
