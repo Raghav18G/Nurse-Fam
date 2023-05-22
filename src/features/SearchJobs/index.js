@@ -1,19 +1,14 @@
 import React from "react";
 import "./styles.css";
-import { Grid, Typography } from "@mui/material";
+import { Grid, NativeSelect, Typography } from "@mui/material";
 import DashboardSearchJobsCard from "../../shared/DashboardSearchJobsCard";
+import DashboardFiltersComponent from "../../shared/DashboardFiltersComponent";
 
 const SearchJobs = () => {
   return (
     <div className="SearchJobs--Container">
       <div className="SearchJobs--Top">
-        <Grid conatiner>
-          <Grid item xs={12}>
-            <Typography sx={{ color: "#666F80", fontWeight: 600 }}>
-              Search Filters
-            </Typography>
-          </Grid>
-        </Grid>
+        <DashboardFiltersComponent />
       </div>
       <div className="SearchJobs--Bottom">
         <Grid container>

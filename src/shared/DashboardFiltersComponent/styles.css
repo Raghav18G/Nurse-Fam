@@ -1,0 +1,21 @@
+.DashboardFiltersComponent--Container{
+
+}
+
+
+.DashboardFiltersComponent--Container .MuiInputBase-input {
+    color: #98a0a6 !important;
+    font-size: 12px !important;
+   
+  }
+
+  .DashboardFiltersComponent--Container .MuiInputBase-input option {
+      color: #111 !important;
+      font-size: 12px !important;
+     background-color: transparent !important;
+     border:none !important;
+     padding:2px !important
+  
+    }
+    
+  
