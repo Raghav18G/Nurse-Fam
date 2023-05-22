@@ -18,6 +18,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import React, { useState } from "react";
 import "./styles.css";
 import { Controller, useForm } from "react-hook-form";
+import { setGeneralInformation } from "../../../services";
 const UDGeneralInfo = () => {
   const {
     register,
@@ -31,6 +32,8 @@ const UDGeneralInfo = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
+    const response = await setGeneralInformation(data);
+    console.log(response);
   };
 
   return (
@@ -275,7 +278,7 @@ const UDGeneralInfo = () => {
                     </InputAdornment>
                   ),
                 }}
-                {...register("file")}
+                // {...register("file")}
               />
             </Grid>
             <Grid item xs={6}>
@@ -284,7 +287,7 @@ const UDGeneralInfo = () => {
                 size="small"
                 placeholder="Choose Avatar"
                 fullWidth
-                {...register("avatar")}
+                // {...register("avatar")}
               >
                 <MenuItem value={1}>avatar 1</MenuItem>
               </Select>
