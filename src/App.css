@@ -62,3 +62,5 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+::-webkit-scrollbar {max-height: 50%; height: 50%;}
