@@ -88,7 +88,7 @@ const RightTabList = () => {
                       }}
                     >
                       <Grid item xs={3}>
-                        <Avatar alt="Remy Sharp" src={avatarlogo1} />
+                        <Avatar sx={{ bgcolor: "#341950" }} />
                       </Grid>
                       <Grid
                         item

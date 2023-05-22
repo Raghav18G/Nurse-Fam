@@ -24,6 +24,8 @@ import facebook from "../../image/Facebook 1.svg";
 import linkedIn from "../../image/LinkedIn 1.svg";
 import whatsapp from "../../image/whatsapp 1.svg";
 import { getUserDetails } from "../../services";
+import { getReferral, getRefrralViaMail } from "../../services";
+import { EmailRounded } from "@mui/icons-material";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -43,7 +45,22 @@ const DashboardTab = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [referOpen, setReferOpen] = useState(false);
-
+  const [referLink, setReferLink] = useState();
+  const [email, setEmail] = useState();
+  const getData = async () => {
+    let response = await getReferral();
+    if (response?.data?.status == 200) {
+      setReferLink(response?.data?.link);
+    }
+  };
+  const getMailData = async () => {
+    let payload = {
+      link: referLink,
+      mail: email,
+    };
+    console.log("ref payload", payload);
+    let mailResponse = await getRefrralViaMail(payload);
+  };
   const handleDialogOpen = () => {
     setIsOpen(true);
   };
@@ -52,6 +69,9 @@ const DashboardTab = () => {
     setReferOpen(true);
   };
 
+  useEffect(() => {
+    getData();
+  }, []);
   const content = (
     <div style={{ backgroundColor: "#341950", padding: "20px" }}>
       <div
@@ -112,7 +132,7 @@ const DashboardTab = () => {
             <Typography sx={{ fontWeight: "800" }}> {userName}</Typography>
           </Grid>
           <Grid item xs={4}>
-            <Avatar alt="john" src={johnAvatar} />
+            <Avatar sx={{ bgcolor: "#341950" }} />
           </Grid>
           <Grid item xs={6}>
             <Tooltip
@@ -180,12 +200,21 @@ const DashboardTab = () => {
         subtitle="Enter the email id to share
           your referral code"
         handleClose={() => {
+          getMailData();
           setReferOpen(false);
         }}
         btnLabel="Share"
       >
         <div style={{ display: "flex", alignItems: "center", margin: "20px" }}>
-          <Input placeholder="Email Address" inputProps={ariaLabel} fullWidth />
+          <Input
+            placeholder="Email Address"
+            value={email}
+            inputProps={ariaLabel}
+            fullWidth
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
         </div>
       </ReusableDialog>
       {/* referal dialog  */}
@@ -216,7 +245,7 @@ const DashboardTab = () => {
             sx={{ backgroundColor: "#fff" }}
             fullWidth
             variant="outlined"
-            value="NFLink 000123A"
+            value={referLink}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">

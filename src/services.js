@@ -239,3 +239,32 @@ export const getLocationDetails = async (payload) => {
     return { error: e.response };
   }
 };
+
+//  Refer complete
+export const getReferral = async () => {
+  try {
+    const response = await axiosInstance.get("/nurse/refer/", {
+      headers: { Authorization: `Bearer ${get_Token()}` },
+    });
+
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
+
+//  Refer email complete
+export const getRefrralViaMail = async (payload) => {
+  try {
+    const response = await axiosInstance.get(
+      `/nurse/share/?email=${payload?.mail}&link=${payload?.link}`,
+      {
+        headers: { Authorization: `Bearer ${get_Token()}` },
+      }
+    );
+
+    return response;
+  } catch (e) {
+    return { error: e.response.data };
+  }
+};
