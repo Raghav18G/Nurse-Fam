@@ -14,6 +14,43 @@ const SearchJobs = () => {
           filters={searchFilters}
           setFilters={setSearchFilters}
         />
+        <Grid container>
+          <Grid item xs={12} sx={{ marginTop: "1rem" }}>
+            <Grid container>
+              <Grid item xs={8}></Grid>
+              <Grid item xs={4}>
+                <Grid container>
+                  <Grid item xs={6} sx={{ textAlign: "end" }}>
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        color: "#666F80",
+                        fontWeight: 800,
+                      }}
+                    >
+                      Sort By :
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={6} className="SORTFilter">
+                    {" "}
+                    <NativeSelect
+                      sx={{ width: "70%", marginLeft: "2rem" }}
+                      defaultValue={30}
+                      inputProps={{
+                        name: "Date",
+                        id: "uncontrolled-native",
+                      }}
+                    >
+                      <option value={"Date"}>Date</option>
+                      <option value={"Month"}>Month</option>
+                      <option value={"Day"}>Day</option>
+                    </NativeSelect>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </div>
       <div className="SearchJobs--Bottom">
         <Grid container>
