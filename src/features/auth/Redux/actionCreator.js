@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import Cookies from "universal-cookie";
+import axiosInstance from "../../../axios";
 
 const cookies = new Cookies();
 // Login Action
@@ -7,6 +8,9 @@ export const login = createAsyncThunk(`auth/login`, async (payload) => {
   console.log("LOGIN ACTION");
   let t_id = "";
   console.log("PAYLOAD LOGIN", payload);
+
+  const response = await axiosInstance.post("/signin/", payload);
+  console.log("Response of Login API", response);
   if (
     payload?.email == "test123@gmail.com" &&
     payload?.password == "Test@0321"

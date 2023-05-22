@@ -27,7 +27,6 @@ const Signin = () => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
-    isRememberMe: true,
   });
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
@@ -116,7 +115,7 @@ const Signin = () => {
                   control={
                     <Checkbox
                       name="isRememberMe"
-                      onChange={handleCredsChange}
+                      // onChange={handleCredsChange}
                     />
                   }
                   label="Remember Me"
