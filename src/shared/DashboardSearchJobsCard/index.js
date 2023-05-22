@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Grid, Paper } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import logo from "../../image/RJCARDPHOTO.svg";
 
 const DashboardSearchJobsCard = () => {
@@ -16,7 +16,13 @@ const DashboardSearchJobsCard = () => {
               {/* UPPER */}
               <Grid item xs={12}>
                 <Grid container>
-                  <Grid item xs={3}></Grid>
+                  <Grid item xs={3}>
+                    <Grid container>
+                      <Grid item xs={12}>
+                        <Typography>Nursing Staff</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
                   <Grid item xs={2}></Grid>
                   <Grid item xs={2}></Grid>
                   <Grid item xs={2}></Grid>
