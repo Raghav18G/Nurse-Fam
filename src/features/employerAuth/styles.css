@@ -1,0 +1,7 @@
+.signupContainer--left--bottom{
+    background-image: url("../../image/Employer/signup.svg");
+    height:65vh;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+  }

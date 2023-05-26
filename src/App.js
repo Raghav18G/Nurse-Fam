@@ -27,6 +27,8 @@ import VerificationSuccess from "./features/Dashboard/VerificationSuccess";
 import PrivateOutlet from "./PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import EmployerSignup from "./features/employerAuth/EmployerSignup";
+import EmployerSignin from "./features/employerAuth/EmployerSignin";
 
 function App() {
   return (
@@ -58,6 +60,8 @@ function App() {
 
         <Route exact index path="/landing" element={<Landing />} />
         <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/signupEmployer" element={<EmployerSignup />} />
+        <Route exact path="/signinEmployer" element={<EmployerSignin />} />
         <Route exact path="/userDetails" element={<UDLanding />} />
         <Route exact path="/userDetails/info" element={<UDLayout />} />
         <Route exact path="/login" element={<Signin />} />
